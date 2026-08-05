@@ -15,6 +15,9 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
 
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
   RewriteRule ^gallery/?$ /moments/ [R=301,L]
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]
