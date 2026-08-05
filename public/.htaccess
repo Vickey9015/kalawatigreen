@@ -1,0 +1,22 @@
+# Upload these files to Hostinger (subdomain document root)
+
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteRule ^gallery/?$ /moments/ [R=301,L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^(.+)/$ $1/index.html [L]
+  RewriteRule ^(.+)$ $1/index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
