@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     "Forest-inspired luxury resort in Ambedkar Nagar — peaceful stays, grand celebrations, and immersive nature experiences.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=2", sizes: "any" },
+      { url: "/icon.svg?v=2", type: "image/svg+xml" },
+      { url: "/icon.png?v=2", type: "image/png", sizes: "512x512" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/apple-icon.png?v=2",
   },
   robots: {
     index: true,

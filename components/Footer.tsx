@@ -46,7 +46,7 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-3 lg:border-r lg:border-kg-gold/25 lg:pr-10">
-              <div className="max-w-[15rem]">
+              <div className="max-w-[16rem]">
                 <Logo variant="footer" />
                 <p className="mt-5 text-sm leading-relaxed text-white/85">
                   A forest. A retreat.

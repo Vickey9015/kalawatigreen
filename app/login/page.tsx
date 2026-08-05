@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Suspense } from "react";
 import LoginForm from "./LoginForm";
 
@@ -17,16 +18,13 @@ export default function LoginPage() {
       <div className="w-full max-w-md overflow-hidden rounded-2xl border border-[rgba(10,61,42,0.16)] bg-[rgba(255,255,255,0.92)] shadow-[0_24px_60px_-28px_rgba(1,38,22,0.45)]">
         <div className="bg-kg-green px-6 py-7 text-white">
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-kg-green-light/40 ring-1 ring-white/20">
-              <svg className="h-6 w-6 text-[#c5e6d4]" viewBox="0 0 48 48" fill="none" aria-hidden>
-                <path
-                  d="M24 6C17 15 13 21 13 29c0 6.5 3.5 11.5 11 13.5C31.5 40.5 35 35.5 35 29c0-8-4-14-11-23z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+            <Image
+              src="/images/kg-logo.png"
+              alt="Kalawati Greens"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-full object-contain"
+            />
             <div>
               <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-[#9dceb4]">
                 KALAWATI GREENS

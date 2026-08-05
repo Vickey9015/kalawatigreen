@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
@@ -83,16 +84,13 @@ export default function AdminShell({ children }: { children: ReactNode }) {
         <div className="border-b border-white/10 px-5 py-6">
           <Link href="/admin/" className="group block">
             <span className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-kg-green-light/35 ring-1 ring-white/25">
-                <svg className="h-6 w-6 text-[#9dceb4]" viewBox="0 0 48 48" fill="none" aria-hidden>
-                  <path
-                    d="M24 6C17 15 13 21 13 29c0 6.5 3.5 11.5 11 13.5C31.5 40.5 35 35.5 35 29c0-8-4-14-11-23z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
+              <Image
+                src="/images/kg-logo.png"
+                alt="Kalawati Greens"
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-contain"
+              />
               <span>
                 <span className="block text-[0.7rem] font-semibold tracking-[0.22em] text-[#9dceb4]">
                   KALAWATI GREENS
