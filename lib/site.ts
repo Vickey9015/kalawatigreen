@@ -1,5 +1,5 @@
 /** Official site base URL. */
-export const SITE = "https://kalawatigreens.vickeybuilds.com";
+export const SITE = "https://kalawatigreens.in";
 
 export const siteName = "Kalawati Greens";
 

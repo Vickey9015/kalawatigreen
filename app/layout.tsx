@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat, Playfair_Display } from "next/font/google";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -21,7 +22,7 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kalawatigreens.vickeybuilds.com"),
+  metadataBase: new URL(SITE),
   title: "Kalawati Greens | A Forest. A Retreat. A Celebration.",
   description:
     "Forest-inspired luxury resort in Ambedkar Nagar — peaceful stays, grand celebrations, and immersive nature experiences.",
