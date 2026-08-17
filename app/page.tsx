@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import CtaSection from "@/components/home/CtaSection";
+import BlogSection from "@/components/home/BlogSection";
+import EventsSection from "@/components/home/EventsSection";
 import HeroSection from "@/components/home/HeroSection";
-import HomeContentPanel from "@/components/home/HomeContentPanel";
+import MomentsPreviewSection from "@/components/home/MomentsPreviewSection";
+import SpacesCarousel from "@/components/home/SpacesCarousel";
+import StatsBar from "@/components/home/StatsBar";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import VideoGallerySection from "@/components/home/VideoGallerySection";
+import VisitSection from "@/components/home/VisitSection";
+import WelcomeSection from "@/components/home/WelcomeSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { heroImage } from "@/lib/home-content";
@@ -23,8 +30,15 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <HomeContentPanel />
-        <CtaSection />
+        <StatsBar />
+        <WelcomeSection />
+        <SpacesCarousel />
+        <VideoGallerySection />
+        <MomentsPreviewSection />
+        <TestimonialsSection />
+        <EventsSection />
+        <VisitSection />
+        <BlogSection />
       </main>
       <Footer />
     </>

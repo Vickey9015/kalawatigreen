@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { seoForRoute } from "@/lib/seo";
+import { contactInfo } from "@/lib/site";
 
 export function generateMetadata(): Metadata {
   return seoForRoute({
@@ -29,8 +30,8 @@ export default function PrivacyPage() {
             </p>
             <p>
               For questions about this policy, contact us at{" "}
-              <a href="mailto:Kalawatigreens@avconexpo.com" className="text-kg-green hover:underline">
-                Kalawatigreens@avconexpo.com
+              <a href={`mailto:${contactInfo.email}`} className="text-kg-green hover:underline">
+                {contactInfo.email}
               </a>
               .
             </p>

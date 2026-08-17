@@ -124,7 +124,7 @@ export default function AdminSettingsPage() {
       <AdminPanel title="Admin access" description="Authentication will be connected in the next step.">
         <div className="grid gap-4 md:grid-cols-2">
           <Field label="Admin email">
-            <TextInput defaultValue="admin@kalawatigreens.com" type="email" />
+            <TextInput defaultValue={contactInfo.email} type="email" />
           </Field>
           <Field label="Display name">
             <TextInput defaultValue="Kalawati Admin" />

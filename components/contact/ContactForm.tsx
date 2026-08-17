@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { eventTypes } from "@/lib/contact-content";
+import { contactInfo } from "@/lib/site";
 
 const inputClass =
   "w-full rounded-lg border border-kg-green/20 bg-white px-4 py-3 text-sm text-kg-text outline-none transition-colors placeholder:text-kg-muted/70 focus:border-kg-green focus:ring-2 focus:ring-kg-green/15";
@@ -11,6 +12,20 @@ export default function ContactForm() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const eventType = String(data.get("eventType") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const subject = encodeURIComponent(`Kalawati Greens enquiry — ${eventType || "General"}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nEvent type: ${eventType}\n\n${message}`,
+    );
+
+    window.location.href = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 

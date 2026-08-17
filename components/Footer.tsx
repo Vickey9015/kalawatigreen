@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { socialLinks } from "@/lib/contact-content";
 import { footerQuickLinks, footerSpacesLinks } from "@/lib/nav-links";
@@ -104,26 +105,46 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-4">
-              <h3 className="mb-5 text-base font-bold text-white">Contact Info</h3>
-              <address className="space-y-4 text-sm not-italic text-white/90">
-                <p className="flex items-start gap-3">
-                  <FooterIcon>
-                    <path d="M9.69 18.93l.003.002.007.003.018.009a.4.4 0 00.162 0l.018-.009.007-.003.003-.002C10.11 18.82 17 14.52 17 8A7 7 0 103 8c0 6.52 6.89 10.82 6.69 10.93zM10 10.5A2.5 2.5 0 1010 5a2.5 2.5 0 000 5.5z" />
-                  </FooterIcon>
-                  <span>{contactInfo.address}</span>
-                </p>
-                <p className="flex items-start gap-3">
-                  <FooterIcon>
-                    <path d="M2 3.5A1.5 1.5 0 013.5 2h2.1a1.5 1.5 0 011.43 1.05l.78 2.46a1.5 1.5 0 01-.38 1.53L6.2 8.26a11.03 11.03 0 005.54 5.54l1.22-1.23a1.5 1.5 0 011.53-.38l2.46.78A1.5 1.5 0 0118 14.4v2.1a1.5 1.5 0 01-1.5 1.5H15C7.82 18 2 12.18 2 5V3.5z" />
-                  </FooterIcon>
+              <h3 className="mb-5 text-base font-bold text-white">Newsletter</h3>
+              <p className="text-sm leading-relaxed text-white/85">
+                Get seasonal updates, events, and forest-retreat stories.
+              </p>
+              <form action={`mailto:${contactInfo.email}`} method="post" encType="text/plain" className="mt-4 flex gap-2">
+                <label htmlFor="footer-email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="footer-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Your email"
+                  className="min-w-0 flex-1 rounded-sm border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/50"
+                />
+                <button type="submit" className="kg-btn-gold px-4 py-2">
+                  Join
+                </button>
+              </form>
+              <div className="mt-6">
+                <h3 className="mb-3 text-base font-bold text-white">Gallery</h3>
+                <div className="flex gap-2">
+                  {["/images/gallery/moment-01.png", "/images/gallery/moment-07.png", "/images/gallery/moment-08.png"].map(
+                    (src) => (
+                      <Link key={src} href="/moments" className="relative h-16 w-16 overflow-hidden rounded-sm">
+                        <Image src={src} alt="" fill className="object-cover" sizes="64px" />
+                      </Link>
+                    ),
+                  )}
+                </div>
+              </div>
+              <address className="mt-6 space-y-3 text-sm not-italic text-white/90">
+                <p>{contactInfo.address}</p>
+                <p>
                   <a href={`tel:${contactInfo.phone.replace(/\s/g, "")}`} className="hover:text-white">
                     {contactInfo.phone}
                   </a>
                 </p>
-                <p className="flex items-start gap-3">
-                  <FooterIcon>
-                    <path d="M2.94 6.34A2 2 0 014.89 5h10.22a2 2 0 011.95 1.34L10 10.76 2.94 6.34zM18 8.12l-7.47 4.67a1 1 0 01-1.06 0L2 8.12V14a2 2 0 002 2h12a2 2 0 002-2V8.12z" />
-                  </FooterIcon>
+                <p>
                   <a href={`mailto:${contactInfo.email}`} className="hover:text-white">
                     {contactInfo.email}
                   </a>
@@ -142,16 +163,6 @@ export default function Footer() {
 
       <FooterLeaves />
     </footer>
-  );
-}
-
-function FooterIcon({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="mt-0.5 shrink-0 text-white">
-      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden>
-        {children}
-      </svg>
-    </span>
   );
 }
 

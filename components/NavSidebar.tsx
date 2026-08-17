@@ -82,7 +82,7 @@ export default function NavSidebar({ open, onClose }: NavSidebarProps) {
         </nav>
         <div className="border-t border-white/10 p-4">
           <Link href="/contact" className="kg-btn-gold w-full" onClick={onClose}>
-            Book Now
+            Book Your Escape
           </Link>
         </div>
       </aside>

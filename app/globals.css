@@ -186,6 +186,31 @@ input:disabled {
   -webkit-text-stroke: 0.4px currentColor;
 }
 
+.kg-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kg-gold);
+}
+
+.kg-display-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--kg-green-dark);
+}
+
+.kg-play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  width: 3.25rem;
+  border-radius: 9999px;
+  border: 2px solid currentColor;
+}
+
 .footer-leaf-pattern {
   background-color: var(--kg-green-dark);
   background-image:

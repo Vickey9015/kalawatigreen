@@ -46,7 +46,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <Link href="/contact" className="kg-btn-gold hidden whitespace-nowrap sm:inline-flex">
-              Book Now
+              Book Your Escape
             </Link>
             <button
               type="button"
