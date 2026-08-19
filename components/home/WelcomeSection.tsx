@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { welcomeContent, welcomeFeatures } from "@/lib/home-content";
+import WelcomeVideo from "./WelcomeVideo";
 
 const icons: Record<(typeof welcomeFeatures)[number]["icon"], React.ReactNode> = {
   leaf: <path d="M12 3C8 8 6 12 6 17c0 4 2 7 6 8 4-1 6-4 6-8 0-5-2-9-6-14z" stroke="currentColor" strokeWidth="1.5" fill="none" />,
@@ -50,24 +50,7 @@ export default function WelcomeSection() {
           </Link>
         </div>
 
-        <Link href="/video" className="group relative block min-h-[22rem] overflow-hidden rounded-md sm:min-h-[28rem]">
-          <Image
-            src={welcomeContent.videoImage}
-            alt={welcomeContent.videoCaption}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-kg-green-dark/35" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <span className="kg-play-btn h-16 w-16 border-white">
-              <svg className="ml-0.5 h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                <path d="M9 7.5v9l8-4.5-8-4.5z" />
-              </svg>
-            </span>
-            <p className="mt-4 text-sm font-semibold tracking-wide">{welcomeContent.videoCaption}</p>
-          </div>
-        </Link>
+        <WelcomeVideo />
       </div>
     </section>
   );

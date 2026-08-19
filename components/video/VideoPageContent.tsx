@@ -20,7 +20,7 @@ export default function VideoPageContent() {
           {featuredVideoId ? (
             <div className="relative aspect-video w-full">
               <iframe
-                src={`https://www.youtube.com/embed/${featuredVideoId}`}
+                src={`https://www.youtube.com/embed/${featuredVideoId}?autoplay=1&mute=1&playsinline=1&rel=0`}
                 title="Kalawati Greens video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

@@ -44,19 +44,19 @@ export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden">
       <div className="footer-leaf-pattern relative bg-kg-green-dark">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-3 lg:border-r lg:border-kg-gold/25 lg:pr-10">
-              <div className="max-w-[16rem]">
-                <Logo variant="footer" />
-                <p className="mt-5 text-sm leading-relaxed text-white/85">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+            <div className="text-center sm:text-left lg:col-span-3 lg:border-r lg:border-kg-gold/25 lg:pr-10">
+              <div className="mx-auto max-w-[16rem] sm:mx-0">
+                <Logo variant="footer" className="justify-center sm:justify-start" />
+                <p className="mt-4 text-sm leading-relaxed text-white/85 sm:mt-5">
                   A forest. A retreat.
                   <br />
                   A celebration.
                   <br />
                   Bringing nature to you.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-wrap justify-center gap-3 sm:mt-6 sm:justify-start">
                   {socialLinks.map((link) => (
                     <a
                       key={link.id}
@@ -64,7 +64,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-kg-gold-light hover:text-kg-gold-light"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-kg-gold-light hover:text-kg-gold-light"
                     >
                       <SocialIcon id={link.id} />
                     </a>
@@ -73,9 +73,9 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="lg:col-span-2">
-              <h3 className="mb-5 text-base font-bold text-white">Quick Links</h3>
-              <ul className="space-y-3 text-sm text-white/90">
+            <div className="text-center sm:text-left lg:col-span-2">
+              <h3 className="mb-4 text-base font-bold text-white sm:mb-5">Quick Links</h3>
+              <ul className="space-y-2.5 text-sm text-white/90 sm:space-y-3">
                 {footerQuickLinks.map((link) => (
                   <li key={link.label}>
                     <Link href={link.href} className="transition-colors hover:text-kg-gold-light">
@@ -91,9 +91,9 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="lg:col-span-3">
-              <h3 className="mb-5 text-base font-bold text-white">Our Spaces</h3>
-              <ul className="space-y-3 text-sm text-white/90">
+            <div className="text-center sm:text-left lg:col-span-3">
+              <h3 className="mb-4 text-base font-bold text-white sm:mb-5">Our Spaces</h3>
+              <ul className="space-y-2.5 text-sm text-white/90 sm:space-y-3">
                 {footerSpacesLinks.map((link) => (
                   <li key={link.label}>
                     <Link href={link.href} className="transition-colors hover:text-kg-gold-light">
@@ -104,12 +104,17 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="lg:col-span-4">
-              <h3 className="mb-5 text-base font-bold text-white">Newsletter</h3>
+            <div className="text-center sm:text-left lg:col-span-4">
+              <h3 className="mb-4 text-base font-bold text-white sm:mb-5">Newsletter</h3>
               <p className="text-sm leading-relaxed text-white/85">
                 Get seasonal updates, events, and forest-retreat stories.
               </p>
-              <form action={`mailto:${contactInfo.email}`} method="post" encType="text/plain" className="mt-4 flex gap-2">
+              <form
+                action={`mailto:${contactInfo.email}`}
+                method="post"
+                encType="text/plain"
+                className="mt-4 flex flex-col gap-2 sm:flex-row"
+              >
                 <label htmlFor="footer-email" className="sr-only">
                   Email address
                 </label>
@@ -119,25 +124,25 @@ export default function Footer() {
                   type="email"
                   required
                   placeholder="Your email"
-                  className="min-w-0 flex-1 rounded-sm border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/50"
+                  className="min-w-0 flex-1 rounded-sm border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/50"
                 />
-                <button type="submit" className="kg-btn-gold px-4 py-2">
+                <button type="submit" className="kg-btn-gold px-4 py-2.5">
                   Join
                 </button>
               </form>
               <div className="mt-6">
                 <h3 className="mb-3 text-base font-bold text-white">Gallery</h3>
-                <div className="flex gap-2">
+                <div className="flex justify-center gap-2 sm:justify-start">
                   {["/images/gallery/moment-01.png", "/images/gallery/moment-07.png", "/images/gallery/moment-08.png"].map(
                     (src) => (
-                      <Link key={src} href="/moments" className="relative h-16 w-16 overflow-hidden rounded-sm">
+                      <Link key={src} href="/moments" className="relative h-16 w-16 overflow-hidden rounded-sm sm:h-16 sm:w-16">
                         <Image src={src} alt="" fill className="object-cover" sizes="64px" />
                       </Link>
                     ),
                   )}
                 </div>
               </div>
-              <address className="mt-6 space-y-3 text-sm not-italic text-white/90">
+              <address className="mt-6 space-y-3 break-words text-sm not-italic text-white/90">
                 <p>{contactInfo.address}</p>
                 <p>
                   <a href={`tel:${contactInfo.phone.replace(/\s/g, "")}`} className="hover:text-white">
@@ -155,8 +160,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-white/10 bg-[#1a4d35] py-4">
-        <p className="text-center text-sm text-white/85">
+      <div className="relative border-t border-white/10 bg-[#1a4d35] px-4 py-4">
+        <p className="text-center text-xs leading-relaxed text-white/85 sm:text-sm">
           © {new Date().getFullYear()} Kalawati Greens. All Rights Reserved.
         </p>
       </div>
@@ -169,7 +174,7 @@ export default function Footer() {
 function FooterLeaves() {
   return (
     <div
-      className="pointer-events-none absolute bottom-0 right-0 z-10 h-36 w-44 sm:h-44 sm:w-52"
+      className="pointer-events-none absolute bottom-0 right-0 z-10 hidden h-36 w-44 sm:block sm:h-44 sm:w-52"
       aria-hidden
     >
       <svg viewBox="0 0 220 200" className="h-full w-full" fill="none">
