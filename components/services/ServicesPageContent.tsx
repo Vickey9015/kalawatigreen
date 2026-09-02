@@ -6,10 +6,9 @@ import ServiceCard from "@/components/services/ServiceCard";
 import ServiceDetailModal from "@/components/services/ServiceDetailModal";
 import {
   getServiceDetailById,
+  serviceCategories,
   servicesClosingLine,
   servicesPageHeader,
-  servicesRowOne,
-  servicesRowTwo,
 } from "@/lib/services-content";
 
 function CornerLeaves({ className }: { className: string }) {
@@ -56,29 +55,49 @@ export default function ServicesPageContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#eef3ee] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <section className="relative overflow-hidden bg-[var(--kg-surface-soft)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <CornerLeaves className="-left-2 top-0" />
 
         <div className="relative mx-auto max-w-7xl">
           <header className="text-center">
             <h1 className="kg-section-title">{servicesPageHeader.title}</h1>
-            <p className="mt-3 text-sm text-kg-green sm:text-base">
-              {servicesPageHeader.subtitle}
-            </p>
+            <p className="mt-3 text-sm text-kg-green sm:text-base">{servicesPageHeader.subtitle}</p>
           </header>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5 [perspective:1200px]">
-            {servicesRowOne.map((service) => (
-              <ServiceCard key={service.id} service={service} onSelect={openDetail} />
-            ))}
-          </div>
+          <div className="mt-14 space-y-16">
+            {serviceCategories.map((category) => (
+              <section
+                key={category.id}
+                id={category.id}
+                className="scroll-mt-28"
+                aria-labelledby={`${category.id}-heading`}
+              >
+                <div className="mx-auto max-w-3xl text-center">
+                  <p className="kg-eyebrow text-kg-gold">{category.eyebrow}</p>
+                  <h2
+                    id={`${category.id}-heading`}
+                    className="kg-display-title mt-3 text-3xl text-kg-green-dark sm:text-4xl"
+                  >
+                    {category.slogan}
+                  </h2>
+                </div>
 
-          <div
-            id="lawns"
-            className="mt-4 grid scroll-mt-28 gap-4 sm:grid-cols-2 lg:grid-cols-4 [perspective:1200px]"
-          >
-            {servicesRowTwo.map((service) => (
-              <ServiceCard key={service.id} service={service} onSelect={openDetail} />
+                <div
+                  className={`mt-8 grid gap-4 [perspective:1200px] ${
+                    category.services.length === 1
+                      ? "sm:grid-cols-1 lg:max-w-sm lg:mx-auto"
+                      : category.services.length === 2
+                        ? "sm:grid-cols-2 lg:max-w-3xl lg:mx-auto"
+                        : category.services.length === 3
+                          ? "sm:grid-cols-2 lg:grid-cols-3"
+                          : "sm:grid-cols-2 lg:grid-cols-4"
+                  }`}
+                >
+                  {category.services.map((service) => (
+                    <ServiceCard key={service.id} service={service} onSelect={openDetail} />
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
 
@@ -88,18 +107,14 @@ export default function ServicesPageContent() {
 
           <div className="mt-10 flex justify-center">
             <Link href="/contact" className="kg-btn-primary min-w-[min(100%,20rem)] px-10 py-4">
-              Explore All Spaces
+              Plan Your Visit
             </Link>
           </div>
         </div>
       </section>
 
       {selected && (
-        <ServiceDetailModal
-          detail={selected.detail}
-          image={selected.image}
-          onClose={closeDetail}
-        />
+        <ServiceDetailModal detail={selected.detail} image={selected.image} onClose={closeDetail} />
       )}
     </>
   );

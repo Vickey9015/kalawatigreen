@@ -16,7 +16,7 @@ export function seoForRoute(params: {
   imageUrl?: string;
 }): Metadata {
   const url = toAbsoluteUrl(params.pathname);
-  const image = params.imageUrl ? toAbsoluteUrl(params.imageUrl) : `${SITE}/images/hero-forest.jpg`;
+  const image = params.imageUrl ? toAbsoluteUrl(params.imageUrl) : `${SITE}/images/hero.jpg`;
 
   return {
     metadataBase: new URL(SITE),

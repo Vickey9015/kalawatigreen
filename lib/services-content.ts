@@ -25,77 +25,124 @@ export type ServiceDetail = {
   perfectFor: string;
 };
 
+export type ServiceCategory = {
+  id: string;
+  eyebrow: string;
+  slogan: string;
+  services: ServiceItem[];
+};
+
 export const servicesPageHeader = {
   title: "Spaces & Services",
-  subtitle: "Curated Experiences. Rooted in Nature.",
+  subtitle: "Curated experiences across stays, dining, and celebrations — all rooted in nature.",
 } as const;
 
-export const servicesRowOne: ServiceItem[] = [
+const curatedSpacesServices: ServiceItem[] = [
   {
     id: "cottages",
     title: "Luxury Cottages",
-    description: "Your private escape in the lap of nature.",
+    description: "Private retreats nestled amidst lush greenery.",
     image: "/images/cottage.png",
     icon: "cottage",
   },
   {
+    id: "conference",
+    title: "Conference Hall",
+    description: "A refined setting for meetings, seminars, and corporate gatherings.",
+    image: "/images/conference.png",
+    icon: "conference",
+  },
+  {
+    id: "celebration-lawns",
+    title: "Banquet Hall & Celebration Lawns",
+    description: "Elegant venues designed for weddings and grand celebrations.",
+    image: "/images/banquet-lawns.jpg",
+    icon: "hall",
+  },
+  {
+    id: "pool",
+    title: "Tropical Swimming Pool",
+    description: "A tranquil oasis for relaxation and leisure.",
+    image: "/images/pool.png",
+    icon: "pool",
+  },
+];
+
+const drinkDineServices: ServiceItem[] = [
+  {
     id: "restaurant",
     title: "Palash Restaurant",
-    description: "A multi-cuisine dining experience.",
+    description: "Flavour, freshness, and culinary artistry in a vibrant multi-cuisine setting.",
     image: "/images/restaurant.png",
     icon: "restaurant",
   },
   {
     id: "bar",
     title: "Baa-Ya-Bia Bar",
-    description: "Sip, relax & unwind in style.",
+    description: "Premium spirits, refreshing cocktails, and an inviting tropical ambiance.",
     image: "/images/bar.png",
     icon: "bar",
   },
-  {
-    id: "pool",
-    title: "Swimming Pool",
-    description: "Tropical pool surrounded by greenery.",
-    image: "/images/pool.png",
-    icon: "pool",
-  },
+];
+
+const grandVenuesServices: ServiceItem[] = [
   {
     id: "banquet",
     title: "Gulmohar Hall",
-    description: "Elegant indoor space for grand events.",
+    description: "An elegant indoor venue for weddings, receptions, and corporate events.",
     image: "/images/banquet.png",
     icon: "hall",
   },
-];
-
-export const servicesRowTwo: ServiceItem[] = [
   {
     id: "upawan-lawn",
     title: "Upawan Lawn",
-    description: "Expansive lawn for large celebrations.",
+    description: "A spacious outdoor lawn surrounded by lush greenery.",
     image: "/images/lawn-upawan.png",
     icon: "lawn",
   },
   {
     id: "jalaj-lawn",
     title: "Jalaj Lawn",
-    description: "Serene lawn for intimate gatherings.",
+    description: "A picturesque lawn with a unique floating stage for grand celebrations.",
     image: "/images/lawn-jalaj.png",
     icon: "garden",
   },
-  {
-    id: "conference",
-    title: "Conference Hall",
-    description: "Modern spaces for meetings & events.",
-    image: "/images/conference.png",
-    icon: "conference",
-  },
+];
+
+const guestAmenitiesServices: ServiceItem[] = [
   {
     id: "parking",
-    title: "Parking",
-    description: "A welcome into nature.",
+    title: "Orchard Parking",
+    description: "A welcome into nature through refreshing fruit orchards.",
     image: "/images/parking.png",
     icon: "parking",
+  },
+];
+
+export const serviceCategories: ServiceCategory[] = [
+  {
+    id: "curated-spaces",
+    eyebrow: "Curated Spaces",
+    slogan: "Natural Elegance.",
+    services: curatedSpacesServices,
+  },
+  {
+    id: "drink-dine",
+    eyebrow: "Drink & Dine",
+    slogan: "Flavours Inspired by Nature",
+    services: drinkDineServices,
+  },
+  {
+    id: "grand-venues",
+    eyebrow: "Grand Venues",
+    slogan: "Celebrating in Nature",
+    services: grandVenuesServices,
+  },
+  {
+    id: "guest-amenities",
+    eyebrow: "Guest Amenities",
+    slogan: "Thoughtfully designed from arrival to departure.",
+    services: guestAmenitiesServices,
   },
 ];
 
@@ -139,6 +186,16 @@ export const serviceDetails: ServiceDetail[] = [
       "Spend your day lounging by the pool, enjoying the calm environment, or simply soaking in the peaceful surroundings.",
     ],
     perfectFor: "Relaxation, leisure time, and family enjoyment.",
+  },
+  {
+    id: "celebration-lawns",
+    title: "Banquet Hall & Celebration Lawns",
+    tagline: "Elegant venues designed for weddings and grand celebrations.",
+    paragraphs: [
+      "Our banquet halls and celebration lawns are crafted for weddings, receptions, and milestone gatherings that deserve a setting as memorable as the occasion itself.",
+      "Surrounded by lush greenery, these spaces blend refined interiors with open-air charm — offering flexibility for décor, seating, and event setups of every scale.",
+    ],
+    perfectFor: "Weddings, receptions, social celebrations, and large family gatherings.",
   },
   {
     id: "banquet",
@@ -195,7 +252,7 @@ export const serviceDetails: ServiceDetail[] = [
 export const servicesClosingLine =
   "Every space at Kalawati Greens is more than just a facility—it is an experience designed to bring you closer to nature while delivering comfort, elegance, and unforgettable moments.";
 
-export const allServices = [...servicesRowOne, ...servicesRowTwo];
+export const allServices = serviceCategories.flatMap((category) => category.services);
 
 const serviceImageById = Object.fromEntries(
   allServices.map((service) => [service.id, service.image]),

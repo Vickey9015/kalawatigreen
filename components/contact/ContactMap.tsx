@@ -7,7 +7,7 @@ export default function ContactMap() {
   return (
     <div className="relative mt-0 overflow-hidden rounded-b-2xl bg-[#dce8dc]">
       <svg
-        className="absolute -top-px left-0 z-10 w-full text-[#eef3ee]"
+        className="absolute -top-px left-0 z-10 w-full text-[var(--kg-surface-soft)]"
         viewBox="0 0 1200 48"
         preserveAspectRatio="none"
         aria-hidden

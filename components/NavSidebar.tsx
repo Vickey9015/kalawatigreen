@@ -66,9 +66,9 @@ export default function NavSidebar({ open, onClose }: NavSidebarProps) {
                   <Link
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
-                    className={`block rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
+                    className={`block rounded-lg px-3 py-3 text-[0.9375rem] font-semibold transition-colors ${
                       isActive
-                        ? "bg-white/15 font-semibold text-kg-gold-light"
+                        ? "bg-white/15 font-bold text-kg-gold-light"
                         : "text-white/90 hover:bg-white/10 hover:text-white"
                     }`}
                     onClick={onClose}
@@ -81,8 +81,8 @@ export default function NavSidebar({ open, onClose }: NavSidebarProps) {
           </ul>
         </nav>
         <div className="border-t border-white/10 p-4">
-          <Link href="/contact" className="kg-btn-gold w-full" onClick={onClose}>
-            Book Your Escape
+          <Link href="/contact?intent=stay" className="kg-btn-gold w-full" onClick={onClose}>
+            Book a Stay
           </Link>
         </div>
       </aside>

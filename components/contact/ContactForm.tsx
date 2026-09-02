@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { eventTypes } from "@/lib/contact-content";
 import { contactInfo } from "@/lib/site";
 
@@ -8,7 +9,40 @@ const inputClass =
   "w-full rounded-lg border border-kg-green/20 bg-white px-4 py-3 text-sm text-kg-text outline-none transition-colors placeholder:text-kg-muted/70 focus:border-kg-green focus:ring-2 focus:ring-kg-green/15";
 
 export default function ContactForm() {
+  const params = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+
+  const intent = params.get("intent") ?? "";
+  const checkin = params.get("checkin") ?? "";
+  const checkout = params.get("checkout") ?? "";
+  const guests = params.get("guests") ?? "";
+
+  const defaultEventType = useMemo(() => {
+    if (intent === "event") return "Wedding";
+    if (intent === "stay") return "Leisure Stay";
+    return "";
+  }, [intent]);
+
+  const defaultMessage = useMemo(() => {
+    if (checkin || checkout || guests) {
+      return [
+        "I would like to check availability for a stay.",
+        checkin ? `Check-in: ${checkin}` : null,
+        checkout ? `Check-out: ${checkout}` : null,
+        guests ? `Guests: ${guests}` : null,
+        "",
+      ]
+        .filter((line) => line !== null)
+        .join("\n");
+    }
+    if (intent === "event") {
+      return "I would like to plan an event at Kalawati Greens.\n";
+    }
+    if (intent === "stay") {
+      return "I would like to book a cottage stay at Kalawati Greens.\n";
+    }
+    return "";
+  }, [intent, checkin, checkout, guests]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -32,6 +66,12 @@ export default function ContactForm() {
   return (
     <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
       <h2 className="text-xl font-bold text-kg-green sm:text-2xl">Send Us a Message</h2>
+      {(intent === "stay" || checkin) && (
+        <p className="mt-3 text-sm text-kg-muted">Your stay dates from the homepage are filled in below.</p>
+      )}
+      {intent === "event" && !checkin && (
+        <p className="mt-3 text-sm text-kg-muted">Tell us about the celebration or gathering you would like to book.</p>
+      )}
 
       {submitted ? (
         <p className="mt-8 rounded-lg border border-kg-green/20 bg-white px-5 py-6 text-sm leading-relaxed text-kg-green sm:text-base">
@@ -67,7 +107,7 @@ export default function ContactForm() {
             <select
               name="eventType"
               required
-              defaultValue=""
+              defaultValue={defaultEventType}
               className={`${inputClass} appearance-none pr-10`}
             >
               <option value="" disabled>
@@ -93,6 +133,7 @@ export default function ContactForm() {
             name="message"
             required
             rows={5}
+            defaultValue={defaultMessage}
             placeholder="Your Message"
             className={`${inputClass} resize-y min-h-[120px]`}
           />

@@ -2,59 +2,40 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Reveal from "@/components/Reveal";
 import { testimonials } from "@/lib/home-content";
-import HomeArrowButton from "./HomeArrowButton";
 
 export default function TestimonialsSection() {
   const [active, setActive] = useState(0);
   const item = testimonials[active];
 
-  const go = (step: number) => {
+  function go(step: number) {
     setActive((current) => (current + step + testimonials.length) % testimonials.length);
-  };
+  }
 
   return (
-    <section className="bg-kg-cream px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="kg-display-title text-4xl uppercase sm:text-5xl">Loved By Our Guests</h2>
-        <div className="relative mt-10">
-          <div className="absolute left-0 top-1/2 hidden -translate-y-1/2 sm:block">
-            <HomeArrowButton
-              direction="prev"
-              label="Previous testimonial"
-              onClick={() => go(-1)}
-              className="border-kg-green/30 text-kg-green"
-            />
-          </div>
-          <div className="px-4 sm:px-16">
-            <div className="relative mx-auto h-24 w-24 overflow-hidden rounded-full">
-              <Image src={item.image} alt={item.name} fill className="object-cover" sizes="96px" />
-            </div>
-            <p className="kg-serif-heading mt-6 text-xl leading-relaxed text-kg-green-dark sm:text-2xl">
-              “{item.quote}”
-            </p>
-            <p className="mt-5 text-sm font-semibold text-kg-green">{item.name}</p>
-            <p className="text-xs uppercase tracking-[0.16em] text-kg-muted">{item.role}</p>
-            <div className="mt-4 flex justify-center gap-1 text-kg-gold" aria-label="5 star rating">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <span key={index}>★</span>
-              ))}
-            </div>
-          </div>
-          <div className="absolute right-0 top-1/2 hidden -translate-y-1/2 sm:block">
-            <HomeArrowButton
-              direction="next"
-              label="Next testimonial"
-              onClick={() => go(1)}
-              className="border-kg-green/30 text-kg-green"
-            />
+    <section className="relative overflow-hidden py-24 sm:py-28">
+      <Image src={item.image} alt="" fill className="object-cover" sizes="100vw" />
+      <div className="absolute inset-0 bg-gradient-to-b from-kg-green-dark/80 via-kg-green-dark/72 to-kg-green-dark/85" />
+      <Reveal>
+        <div className="kg-on-image relative mx-auto max-w-3xl px-4 text-center text-white sm:px-6">
+          <p className="kg-eyebrow text-kg-gold-light">Guest voices</p>
+          <h2 className="kg-display-title mt-4 text-4xl uppercase text-white sm:text-5xl">Loved By Our Guests</h2>
+          <blockquote className="kg-serif-heading mt-10 text-2xl leading-relaxed text-white sm:text-3xl">
+            “{item.quote}”
+          </blockquote>
+          <p className="mt-6 text-sm tracking-[0.16em] uppercase text-kg-gold-light">{item.name}</p>
+          <p className="mt-1 text-sm text-white/90">{item.role}</p>
+          <div className="mt-8 flex justify-center gap-3">
+            <button type="button" onClick={() => go(-1)} className="h-11 w-11 rounded-full border border-white/40" aria-label="Previous">
+              ←
+            </button>
+            <button type="button" onClick={() => go(1)} className="h-11 w-11 rounded-full border border-white/40" aria-label="Next">
+              →
+            </button>
           </div>
         </div>
-        <div className="mt-6 flex justify-center gap-3 sm:hidden">
-          <HomeArrowButton direction="prev" label="Previous testimonial" onClick={() => go(-1)} className="border-kg-green/30 text-kg-green" />
-          <HomeArrowButton direction="next" label="Next testimonial" onClick={() => go(1)} className="border-kg-green/30 text-kg-green" />
-        </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

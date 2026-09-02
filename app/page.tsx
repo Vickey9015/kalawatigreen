@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import BookingBand from "@/components/home/BookingBand";
 import BlogSection from "@/components/home/BlogSection";
 import EventsSection from "@/components/home/EventsSection";
+import ExperiencePillarsSection from "@/components/home/ExperiencePillarsSection";
 import HeroSection from "@/components/home/HeroSection";
 import MomentsPreviewSection from "@/components/home/MomentsPreviewSection";
 import SpacesCarousel from "@/components/home/SpacesCarousel";
@@ -32,7 +34,9 @@ export default function Home() {
         <HeroSection />
         <StatsBar />
         <WelcomeSection />
+        <ExperiencePillarsSection />
         <SpacesCarousel />
+        <BookingBand />
         <VideoGallerySection />
         <MomentsPreviewSection />
         <TestimonialsSection />

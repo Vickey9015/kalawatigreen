@@ -58,23 +58,23 @@ mkdirSync(uploadDir, { recursive: true });
 const readme = `KALAWATI GREENS — HOSTINGER DEPLOY
 =================================
 
-Site URL: https://kalawatigreens.in
+Site URL: https://kalawatigreens.vickeybuilds.com
 
 OPTION A — Upload ZIP (recommended)
 -----------------------------------
 1. In Hostinger hPanel, open: Websites → Manage → File Manager
-2. Open the document root for kalawatigreens.in
-   (usually public_html)
+2. Open the document root for kalawatigreens.vickeybuilds.com
+   (subdomain folder — not kalawatigreens.in / public_html)
 3. Delete any default index.html / placeholder files
 4. Upload: kalawati-greens-site.zip (from this folder)
 5. Extract the ZIP in the document root
 6. Confirm .htaccess is present (enable "Show hidden files" in File Manager)
-7. Visit https://kalawatigreens.in/
+7. Visit https://kalawatigreens.vickeybuilds.com/
 
 OPTION B — Upload folder contents
 ---------------------------------
 1. Run locally: npm run export:hostinger
-2. Upload everything inside the "out" folder to the domain root (public_html)
+2. Upload everything inside the "out" folder to the kalawatigreens.vickeybuilds.com document root
 3. Include .htaccess and all subfolders (_next, images, about, etc.)
 
 After deploy — quick checks

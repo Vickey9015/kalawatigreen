@@ -1,7 +1,7 @@
 export const heroHeadline = ["A Forest.", "A Retreat.", "A Celebration."] as const;
 
 export const heroSubtitle =
-  "A hidden paradise where nature, luxury, and unforgettable moments come together.";
+  "A forest-inspired resort rooted in the philosophy of the Miyawaki Method.";
 
 export const heroSlides = [
   {
@@ -30,26 +30,118 @@ export const heroSlides = [
   },
 ] as const;
 
+export const heroCinematic = [
+  { image: "/images/cottage.png", alt: "Luxury cottage at dusk" },
+  { image: "/images/pool.png", alt: "Aerial view of the tropical swimming pool" },
+  { image: "/images/banquet.png", alt: "Glass banquet hall among the trees" },
+  { image: "/images/hero.jpg", alt: "Forest resort aerial view" },
+  { image: "/images/restaurant.png", alt: "Restaurant dining at Kalawati Greens" },
+  { image: "/images/gallery/moment-06.png", alt: "Night ambience at the resort" },
+] as const;
+
+export const homeBooking = {
+  kicker: "Bookings now open",
+  title: "Cottages, celebrations, and forest stays — available to book",
+  body: "Check dates for a private cottage stay, a wedding on the lawns, or a quiet weekend in the Miyawaki forest. Our team confirms availability personally.",
+  primaryCta: "Book a Stay",
+  secondaryCta: "Plan an Event",
+} as const;
+
 export const heroImage = "/images/hero.jpg";
 export const heroImageDesktop = "/images/hero.jpg";
 
 export const homeStats = [
-  { value: "28+", label: "Acres of Greenery", icon: "acres" },
+  { value: "7,000", label: "Oxygen Produced — Approx. Tons/Yr", icon: "oxygen" },
   { value: "2,80,000+", label: "Plants & Trees", icon: "plants" },
   { value: "4,000+", label: "Varieties", icon: "varieties" },
-  { value: "100+", label: "Events Hosted", icon: "events" },
+  { value: "8,000", label: "Carbon Dioxide Absorbed — Approx. Tons/Yr", icon: "carbon" },
 ] as const;
 
 export const welcomeContent = {
   eyebrow: "Welcome to Kalawati Greens",
-  title: "Where Luxury Meets Nature",
+  title: "Where Nature Becomes the Experience",
   paragraphs: [
-    "At Kalawati Greens, every detail is designed to reconnect you with nature. Built on the philosophy of the Miyawaki Method, our space is home to over 2,80,000 plants of 4,000+ varieties, creating a dense, living forest ecosystem.",
-    "From peaceful stays to grand celebrations, we offer an experience where luxury meets nature in its purest form.",
+    "A forest-inspired resort rooted in the philosophy of the Miyawaki Method.",
+    "Here, dense greenery, fresh air, and tranquil landscapes create a destination where nature becomes the experience.",
+    "A rare retreat where celebrations unfold amidst lush forests and tranquil landscapes.",
   ],
   videoImage: "/images/banquet.png",
   videoCaption: "Experience Kalawati Greens",
 } as const;
+
+export const experiencePillars = [
+  {
+    eyebrow: "Curated Spaces",
+    slogan: "Natural Elegance.",
+    image: "/images/cottage.png",
+    items: [
+      {
+        title: "Luxury Cottages",
+        description: "Private retreats nestled amidst lush greenery.",
+        image: "/images/cottage.png",
+      },
+      {
+        title: "Conference Hall",
+        description: "A refined setting for meetings, seminars, and corporate gatherings.",
+        image: "/images/conference.png",
+      },
+      {
+        title: "Banquet Hall & Celebration Lawns",
+        description: "Elegant venues designed for weddings and grand celebrations.",
+        image: "/images/banquet-lawns.jpg",
+      },
+      {
+        title: "Tropical Swimming Pool",
+        description: "A tranquil oasis for relaxation and leisure.",
+        image: "/images/pool.png",
+      },
+    ],
+  },
+  {
+    eyebrow: "Drink & Dine",
+    slogan: "Flavours Inspired by Nature",
+    image: "/images/restaurant.png",
+    items: [
+      {
+        title: "Palash Restaurant",
+        description:
+          "A vibrant multi-cuisine restaurant where flavour, freshness, and culinary artistry come together.",
+        image: "/images/restaurant.png",
+      },
+      {
+        title: "Baa-Ya-Bia Bar",
+        description:
+          "A stylish tropical bar offering premium spirits, refreshing cocktails, and an inviting ambiance.",
+        image: "/images/bar.png",
+      },
+    ],
+  },
+  {
+    eyebrow: "Grand Venues",
+    slogan: "Celebrating in Nature",
+    image: "/images/lawn-upawan.png",
+    items: [
+      {
+        title: "Gulmohar Hall",
+        description:
+          "An elegant indoor banquet venue designed for weddings, receptions, and corporate events.",
+        image: "/images/banquet.png",
+      },
+      {
+        title: "Upawan Lawn",
+        description:
+          "A spacious outdoor lawn surrounded by lush greenery — a serene forest retreat away from city noise.",
+        image: "/images/lawn-upawan.png",
+      },
+      {
+        title: "Jalaj Lawn",
+        description:
+          "A picturesque lawn with a unique floating stage, perfect for grand celebrations and lasting memories.",
+        image: "/images/lawn-jalaj.png",
+      },
+    ],
+  },
+] as const;
 
 export const welcomeFeatures = [
   { title: "Eco-friendly sustainable", icon: "leaf" },
@@ -59,46 +151,64 @@ export const welcomeFeatures = [
 ] as const;
 
 export const spacesSection = {
-  title: "Our Spaces",
-  subtitle: "Curated spaces for unforgettable stays, celebrations & getaways.",
+  title: "Curated Spaces",
+  subtitle: "Natural Elegance. — unforgettable stays, celebrations, and getaways rooted in nature.",
 } as const;
 
 export const homeSpaces = [
   {
     id: "cottages",
     title: "Luxury Cottages",
-    description: "Private forest cottages for a peaceful, nature-wrapped stay.",
+    description: "Private retreats nestled amidst lush greenery.",
     image: "/images/cottage.png",
   },
   {
-    id: "banquet",
-    title: "Banquet & Lawns",
-    description: "Elegant halls and open lawns for weddings and celebrations.",
-    image: "/images/banquet-lawns.jpg",
-  },
-  {
-    id: "restaurant",
-    title: "Restaurant & Bar",
-    description: "Multi-cuisine dining and tropical evenings at Baa-Ya-Bia.",
-    image: "/images/restaurant.png",
-  },
-  {
-    id: "pool",
-    title: "Swimming Pool",
-    description: "A tropical pool surrounded by dense greenery.",
-    image: "/images/pool.png",
-  },
-  {
     id: "conference",
-    title: "Conference Spaces",
-    description: "Focused meeting rooms away from city distraction.",
+    title: "Conference Hall",
+    description: "A refined setting for meetings, seminars, and corporate gatherings.",
     image: "/images/conference.png",
   },
   {
-    id: "parking",
-    title: "Orchard Parking",
-    description: "Arrive through fruit orchards — a welcome into nature.",
-    image: "/images/parking.png",
+    id: "banquet",
+    title: "Banquet Hall & Lawns",
+    description: "Elegant venues designed for weddings and grand celebrations.",
+    image: "/images/banquet-lawns.jpg",
+  },
+  {
+    id: "pool",
+    title: "Tropical Swimming Pool",
+    description: "A tranquil oasis for relaxation and leisure.",
+    image: "/images/pool.png",
+  },
+  {
+    id: "restaurant",
+    title: "Palash Restaurant",
+    description: "Flavour, freshness, and culinary artistry in a vibrant multi-cuisine setting.",
+    image: "/images/restaurant.png",
+  },
+  {
+    id: "bar",
+    title: "Baa-Ya-Bia Bar",
+    description: "Premium spirits, refreshing cocktails, and an inviting tropical ambiance.",
+    image: "/images/bar.png",
+  },
+  {
+    id: "gulmohar",
+    title: "Gulmohar Hall",
+    description: "An elegant indoor venue for weddings, receptions, and corporate events.",
+    image: "/images/banquet.png",
+  },
+  {
+    id: "upawan-lawn",
+    title: "Upawan Lawn",
+    description: "A spacious outdoor lawn surrounded by lush greenery.",
+    image: "/images/lawn-upawan.png",
+  },
+  {
+    id: "jalaj-lawn",
+    title: "Jalaj Lawn",
+    description: "A picturesque lawn with a unique floating stage for grand celebrations.",
+    image: "/images/lawn-jalaj.png",
   },
 ] as const;
 

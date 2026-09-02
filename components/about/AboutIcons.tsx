@@ -52,28 +52,28 @@ const valueIcons: Record<"nature" | "hospitality" | "growth", React.ReactNode> =
   nature: (
     <path
       d="M12 3C8 8 6 12 6 17c0 4 2 7 6 8 4-1 6-4 6-8 0-5-2-9-6-14z"
-      fill="#1a5c3e"
+      fill="#28c99a"
     />
   ),
   hospitality: (
     <>
       <path
         d="M8 14c0-2 1.5-4 4-4s4 2 4 4"
-        stroke="#1a5c3e"
+        stroke="#28c99a"
         strokeWidth="1.5"
         fill="none"
         strokeLinecap="round"
       />
       <path
         d="M6 16c1.5-2 3.5-3 6-3s4.5 1 6 3"
-        stroke="#1a5c3e"
+        stroke="#28c99a"
         strokeWidth="1.5"
         fill="none"
         strokeLinecap="round"
       />
       <path
         d="M12 8c-1.5-2-3-2-4 0-1 2 0 4 2 2-2 3-2 4-2 1-2 2.5-2 4 0"
-        stroke="#1a5c3e"
+        stroke="#28c99a"
         strokeWidth="1.5"
         fill="none"
         strokeLinejoin="round"
@@ -84,14 +84,14 @@ const valueIcons: Record<"nature" | "hospitality" | "growth", React.ReactNode> =
     <>
       <path
         d="M12 4v16M12 4c-3 2-5 4-5 7a5 5 0 0010 0c0-3-2-5-5-7z"
-        stroke="#1a5c3e"
+        stroke="#28c99a"
         strokeWidth="1.5"
         fill="none"
         strokeLinejoin="round"
       />
       <path
         d="M7 10c1.5-1 3-1 5 0M17 10c-1.5-1-3-1-5 0"
-        stroke="#1a5c3e"
+        stroke="#28c99a"
         strokeWidth="1.5"
         fill="none"
         strokeLinecap="round"
