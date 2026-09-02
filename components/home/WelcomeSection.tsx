@@ -64,16 +64,20 @@ export default function WelcomeSection() {
     if (!media) return;
 
     function onMove(event: PointerEvent) {
-      const rect = media.getBoundingClientRect();
+      const node = mediaRef.current;
+      if (!node) return;
+      const rect = node.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width - 0.5;
       const y = (event.clientY - rect.top) / rect.height - 0.5;
-      media.style.setProperty("--kg-tilt-x", `${y * -6}deg`);
-      media.style.setProperty("--kg-tilt-y", `${x * 6}deg`);
+      node.style.setProperty("--kg-tilt-x", `${y * -6}deg`);
+      node.style.setProperty("--kg-tilt-y", `${x * 6}deg`);
     }
 
     function onLeave() {
-      media.style.setProperty("--kg-tilt-x", "0deg");
-      media.style.setProperty("--kg-tilt-y", "0deg");
+      const node = mediaRef.current;
+      if (!node) return;
+      node.style.setProperty("--kg-tilt-x", "0deg");
+      node.style.setProperty("--kg-tilt-y", "0deg");
     }
 
     media.addEventListener("pointermove", onMove);
