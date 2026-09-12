@@ -92,7 +92,7 @@ export default function AdminContactPage() {
           {eventTypes.map((type) => (
             <span
               key={type}
-              className="inline-flex items-center gap-2 rounded-lg border border-[rgba(10,61,42,0.12)] bg-white px-3 py-1.5 text-xs font-medium text-kg-green"
+              className="inline-flex items-center gap-2 rounded-lg border border-[rgba(1,49,31,0.12)] bg-white px-3 py-1.5 text-xs font-medium text-kg-green"
             >
               {type}
               <button
@@ -116,7 +116,7 @@ export default function AdminContactPage() {
           {contactHighlights.map((item) => (
             <div
               key={item.title}
-              className="grid gap-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 md:grid-cols-[1fr_1fr_auto]"
+              className="grid gap-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 md:grid-cols-[1fr_1fr_auto]"
             >
               <Field label="Title">
                 <TextInput defaultValue={item.title} />

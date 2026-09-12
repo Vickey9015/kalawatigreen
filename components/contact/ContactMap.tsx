@@ -5,7 +5,7 @@ export default function ContactMap() {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.mapQuery)}`;
 
   return (
-    <div className="relative mt-0 overflow-hidden rounded-b-2xl bg-[#dce8dc]">
+    <div className="relative mt-0 overflow-hidden rounded-b-2xl bg-[#e8e6e0]">
       <svg
         className="absolute -top-px left-0 z-10 w-full text-[var(--kg-surface-soft)]"
         viewBox="0 0 1200 48"
@@ -41,13 +41,13 @@ export default function ContactMap() {
           />
         </svg>
 
-        <div className="absolute inset-x-0 bottom-0 z-10 bg-kg-green-dark/85 px-4 py-4 text-center sm:py-5">
-          <p className="text-sm font-semibold text-white sm:text-base">{contactInfo.address}</p>
+        <div className="absolute inset-x-0 bottom-0 z-10 border-t border-kg-green/12 bg-white/95 px-4 py-4 text-center backdrop-blur-sm sm:py-5">
+          <p className="text-sm font-semibold text-kg-green-dark sm:text-base">{contactInfo.address}</p>
           <a
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-1 inline-block text-xs text-white/85 underline-offset-2 hover:text-white hover:underline sm:text-sm"
+            className="mt-1 inline-block text-xs text-kg-muted underline-offset-2 hover:text-kg-green hover:underline sm:text-sm"
           >
             Get directions on Google Maps
           </a>

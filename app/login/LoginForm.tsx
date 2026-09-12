@@ -53,7 +53,7 @@ export default function LoginForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           placeholder="Kalawatigreens@avconexpo.com"
-          className="w-full rounded-lg border border-[rgba(10,61,42,0.18)] bg-[rgba(232,240,234,0.55)] px-3.5 py-2.5 text-sm text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(26,92,62,0.18)]"
+          className="w-full rounded-lg border border-[rgba(1,49,31,0.18)] bg-[rgba(243,242,237,0.55)] px-3.5 py-2.5 text-sm text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(13,74,56,0.18)]"
         />
       </label>
 
@@ -68,14 +68,14 @@ export default function LoginForm() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           placeholder="Enter any password"
-          className="w-full rounded-lg border border-[rgba(10,61,42,0.18)] bg-[rgba(232,240,234,0.55)] px-3.5 py-2.5 text-sm text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(26,92,62,0.18)]"
+          className="w-full rounded-lg border border-[rgba(1,49,31,0.18)] bg-[rgba(243,242,237,0.55)] px-3.5 py-2.5 text-sm text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(13,74,56,0.18)]"
         />
       </label>
 
       <button
         type="submit"
         disabled={submitting}
-        className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-kg-green px-4 py-3 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white transition hover:bg-kg-green-light disabled:opacity-70"
+        className="kg-btn-primary mt-2 inline-flex w-full items-center justify-center rounded-lg px-4 py-3 text-[0.7rem] font-bold uppercase tracking-[0.14em] disabled:opacity-70"
       >
         {submitting ? "Signing in…" : "Sign in"}
       </button>

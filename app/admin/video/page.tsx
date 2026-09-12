@@ -72,7 +72,7 @@ export default function AdminVideoPage() {
           </div>
         </div>
 
-        <div className="mt-5 flex aspect-video items-center justify-center rounded-xl border border-dashed border-[rgba(10,61,42,0.2)] bg-[rgba(10,61,42,0.04)] text-center">
+        <div className="mt-5 flex aspect-video items-center justify-center rounded-xl border border-dashed border-[rgba(1,49,31,0.2)] bg-[rgba(1,49,31,0.04)] text-center">
           <div>
             <p className="text-sm font-medium text-kg-green">Video preview</p>
             <p className="mt-1 text-xs text-kg-muted">
@@ -93,7 +93,7 @@ export default function AdminVideoPage() {
           {videoHighlights.map((clip) => (
             <div
               key={clip.title}
-              className="grid gap-4 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 md:grid-cols-[7.5rem_1fr_auto]"
+              className="grid gap-4 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 md:grid-cols-[7.5rem_1fr_auto]"
             >
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-kg-cream-dark">
                 <Image

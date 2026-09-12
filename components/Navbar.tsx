@@ -30,8 +30,8 @@ export default function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           transparent
-            ? "border-b border-white/25 bg-kg-green-dark/90 backdrop-blur-sm"
-            : "border-b border-kg-green-light/30 bg-kg-green shadow-lg"
+            ? "border-b border-kg-green/10 bg-white/75 backdrop-blur-md"
+            : "border-b border-kg-green/15 bg-white/95 shadow-md backdrop-blur-md"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8">
@@ -49,8 +49,8 @@ export default function Navbar() {
                       aria-current={isActive ? "page" : undefined}
                       className={`${linkBase} relative ${
                         isActive
-                          ? "font-bold text-kg-gold-light after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-kg-gold-light"
-                          : "text-white/90 hover:text-kg-gold-light"
+                          ? "font-bold text-kg-green after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-kg-gold"
+                          : "text-kg-green/85 hover:text-kg-green"
                       }`}
                     >
                       {item.label}
@@ -67,7 +67,7 @@ export default function Navbar() {
             </Link>
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center text-white lg:hidden"
+              className="flex h-10 w-10 items-center justify-center text-kg-green lg:hidden"
               aria-expanded={sidebarOpen}
               aria-label={sidebarOpen ? "Close menu" : "Open menu"}
               onClick={() => setSidebarOpen((open) => !open)}

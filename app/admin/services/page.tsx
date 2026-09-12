@@ -53,7 +53,7 @@ export default function AdminServicesPage() {
             return (
               <article
                 key={service.id}
-                className="rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4"
+                className="rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4"
               >
                 <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">

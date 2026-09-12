@@ -48,7 +48,7 @@ export default function AdminGalleryPage() {
           {galleryFilters.map((filter) => (
             <span
               key={filter.id}
-              className="rounded-lg border border-[rgba(10,61,42,0.12)] bg-white px-3 py-1.5 text-xs font-medium text-kg-green"
+              className="rounded-lg border border-[rgba(1,49,31,0.12)] bg-white px-3 py-1.5 text-xs font-medium text-kg-green"
             >
               {filter.label}
             </span>
@@ -65,7 +65,7 @@ export default function AdminGalleryPage() {
           {galleryItems.map((item) => (
             <article
               key={item.id}
-              className="overflow-hidden rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)]"
+              className="overflow-hidden rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)]"
             >
               <div className="relative aspect-[4/3] bg-kg-cream-dark">
                 <Image

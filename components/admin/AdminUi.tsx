@@ -11,7 +11,7 @@ export function AdminPageHeader({
   actions?: ReactNode;
 }) {
   return (
-    <header className="admin-fade-in flex flex-col gap-4 border-b border-[rgba(10,61,42,0.14)] pb-6 sm:flex-row sm:items-end sm:justify-between">
+    <header className="admin-fade-in flex flex-col gap-4 border-b border-[rgba(1,49,31,0.14)] pb-6 sm:flex-row sm:items-end sm:justify-between">
       <div>
         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-kg-green-light">
           Content management
@@ -38,8 +38,8 @@ export function AdminPanel({
   actions?: ReactNode;
 }) {
   return (
-    <section className="admin-panel overflow-hidden rounded-2xl border border-[rgba(10,61,42,0.14)] bg-[rgba(255,255,255,0.88)]">
-      <div className="flex flex-col gap-3 border-b border-[rgba(10,61,42,0.1)] bg-[rgba(10,61,42,0.035)] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <section className="admin-panel overflow-hidden rounded-2xl border border-[rgba(1,49,31,0.14)] bg-[rgba(255,255,255,0.88)]">
+      <div className="flex flex-col gap-3 border-b border-[rgba(1,49,31,0.1)] bg-[rgba(1,49,31,0.035)] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <h2 className="text-sm font-semibold tracking-wide text-kg-green">{title}</h2>
           {description ? (
@@ -87,7 +87,7 @@ export function TextInput({
       type={type}
       defaultValue={defaultValue}
       placeholder={placeholder}
-      className="admin-input w-full rounded-lg border border-[rgba(10,61,42,0.18)] bg-[rgba(232,240,234,0.55)] px-3.5 py-2.5 text-sm text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(26,92,62,0.18)]"
+      className="admin-input w-full rounded-lg border border-[rgba(1,49,31,0.18)] bg-[rgba(243,242,237,0.55)] px-3.5 py-2.5 text-sm text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(13,74,56,0.18)]"
     />
   );
 }
@@ -106,7 +106,7 @@ export function TextArea({
       defaultValue={defaultValue}
       placeholder={placeholder}
       rows={rows}
-      className="admin-input w-full resize-y rounded-lg border border-[rgba(10,61,42,0.18)] bg-[rgba(232,240,234,0.55)] px-3.5 py-2.5 text-sm leading-relaxed text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(26,92,62,0.18)]"
+      className="admin-input w-full resize-y rounded-lg border border-[rgba(1,49,31,0.18)] bg-[rgba(243,242,237,0.55)] px-3.5 py-2.5 text-sm leading-relaxed text-kg-text outline-none transition focus:border-kg-green focus:bg-white focus:ring-2 focus:ring-[rgba(13,74,56,0.18)]"
     />
   );
 }
@@ -115,7 +115,7 @@ const primaryBtnClass =
   "inline-flex items-center justify-center rounded-lg bg-kg-green px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-kg-green-light";
 
 const secondaryBtnClass =
-  "inline-flex items-center justify-center rounded-lg border border-[rgba(10,61,42,0.28)] bg-white px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-kg-green transition hover:bg-[rgba(10,61,42,0.06)]";
+  "inline-flex items-center justify-center rounded-lg border border-[rgba(1,49,31,0.28)] bg-white px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-kg-green transition hover:bg-[rgba(1,49,31,0.06)]";
 
 export function AdminPrimaryButton({
   children,
@@ -171,7 +171,7 @@ export function AdminGhostButton({ children }: { children: ReactNode }) {
   return (
     <button
       type="button"
-      className="inline-flex items-center justify-center rounded-lg px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-kg-muted transition hover:bg-[rgba(10,61,42,0.06)] hover:text-kg-green"
+      className="inline-flex items-center justify-center rounded-lg px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-kg-muted transition hover:bg-[rgba(1,49,31,0.06)] hover:text-kg-green"
     >
       {children}
     </button>
@@ -186,9 +186,9 @@ export function StatusBadge({
   tone?: "neutral" | "success" | "warn";
 }) {
   const tones = {
-    neutral: "bg-[rgba(10,61,42,0.1)] text-kg-green",
-    success: "bg-[rgba(26,92,62,0.16)] text-kg-green",
-    warn: "bg-[rgba(10,61,42,0.08)] text-kg-green-light ring-1 ring-[rgba(10,61,42,0.16)]",
+    neutral: "bg-[rgba(1,49,31,0.1)] text-kg-green",
+    success: "bg-[rgba(13,74,56,0.16)] text-kg-green",
+    warn: "bg-[rgba(1,49,31,0.08)] text-kg-green-light ring-1 ring-[rgba(1,49,31,0.16)]",
   };
 
   return (

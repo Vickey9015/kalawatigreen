@@ -5,7 +5,7 @@ import { homeBooking } from "@/lib/home-content";
 
 export default function BookingBand() {
   return (
-    <section className="relative overflow-hidden py-24 sm:py-32">
+    <section className="relative overflow-hidden py-14 sm:py-16">
       <Image src="/images/cottage.png" alt="" fill className="object-cover" sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-b from-kg-green-dark/80 via-kg-green-dark/70 to-kg-green-dark/85" />
       <Reveal>
@@ -17,7 +17,7 @@ export default function BookingBand() {
             <Link href="/contact?intent=stay" className="kg-btn-gold">
               {homeBooking.primaryCta}
             </Link>
-            <Link href="/contact?intent=event" className="rounded-sm border border-white/50 px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+            <Link href="/contact?intent=event" className="rounded-sm border border-white/60 bg-white/10 px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white hover:text-kg-green">
               {homeBooking.secondaryCta}
             </Link>
           </div>

@@ -5,7 +5,7 @@ import { homeMoments } from "@/lib/home-content";
 
 export default function MomentsPreviewSection() {
   return (
-    <section className="bg-kg-cream px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+    <section className="bg-kg-cream px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="text-center">
@@ -34,6 +34,11 @@ export default function MomentsPreviewSection() {
             </li>
           ))}
         </ul>
+        <div className="mt-12 flex justify-center">
+          <Link href="/moments/" className="kg-btn-gold min-w-[min(100%,14rem)] px-10 py-3.5">
+            See more
+          </Link>
+        </div>
       </div>
     </section>
   );

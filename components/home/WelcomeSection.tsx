@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import WelcomeVideo from "@/components/home/WelcomeVideo";
 import { welcomeContent, welcomeFeatures } from "@/lib/home-content";
 
 const featureIcons: Record<string, ReactNode> = {
@@ -91,7 +92,7 @@ export default function WelcomeSection() {
   return (
     <section
       ref={sectionRef}
-      className={`kg-welcome relative overflow-hidden py-20 sm:py-28 ${active ? "is-active" : ""}`}
+      className={`kg-welcome relative overflow-hidden py-12 sm:py-16 ${active ? "is-active" : ""}`}
       aria-labelledby="welcome-heading"
     >
       <div className="kg-welcome-glow kg-welcome-glow--left" aria-hidden />
@@ -175,26 +176,9 @@ export default function WelcomeSection() {
                 />
               </div>
 
-              <Link href="/video" className="kg-welcome-media-card kg-welcome-media-card--main group block">
-                <Image
-                  src={welcomeContent.videoImage}
-                  alt={welcomeContent.videoCaption}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 90vw, 40vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-kg-green-dark/75 via-kg-green-dark/15 to-transparent" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="kg-welcome-play">
-                    <svg className="ml-0.5 h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                      <path d="M9 7.5v9l8-4.5-8-4.5z" />
-                    </svg>
-                  </span>
-                  <p className="mt-5 text-xs font-bold uppercase tracking-[0.22em] text-white">
-                    {welcomeContent.videoCaption}
-                  </p>
-                </div>
-              </Link>
+              <div className="kg-welcome-media-card kg-welcome-media-card--main overflow-hidden">
+                <WelcomeVideo className="h-full min-h-[26rem] rounded-[1.75rem]" />
+              </div>
 
               <div className="kg-welcome-stat-chip">
                 <p className="text-2xl font-semibold text-kg-green-dark">2,80,000+</p>

@@ -8,6 +8,33 @@ export const videoPageHeader = {
 /** Replace with your YouTube video ID when available, e.g. "dQw4w9WgXcQ" */
 export const featuredVideoId = "";
 
+export type HomeGalleryVideo = {
+  title: string;
+  image: string;
+  /** Local path under /public, e.g. /videos/resort-overview.mp4 */
+  videoSrc?: string;
+  /** YouTube video ID for hover preview */
+  videoId?: string;
+};
+
+export const homeGalleryVideos: HomeGalleryVideo[] = [
+  {
+    title: "Resort Overview",
+    image: "/images/cottage.png",
+    videoSrc: "/videos/resort-overview.mp4",
+  },
+  {
+    title: "Nature & Ambience",
+    image: "/images/lawn-upawan.png",
+    videoSrc: "/videos/nature-ambience.mp4",
+  },
+  {
+    title: "Pool & Leisure",
+    image: "/images/pool.png",
+    videoSrc: "/videos/pool-leisure.mp4",
+  },
+];
+
 export const videoHighlights = [
   {
     title: "Forest Retreat",

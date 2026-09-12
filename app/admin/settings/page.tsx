@@ -73,7 +73,7 @@ export default function AdminSettingsPage() {
           {mainNavLinks.map((link) => (
             <div
               key={link.href}
-              className="grid gap-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 md:grid-cols-[1fr_1fr_auto]"
+              className="grid gap-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 md:grid-cols-[1fr_1fr_auto]"
             >
               <Field label="Label">
                 <TextInput defaultValue={link.label} />

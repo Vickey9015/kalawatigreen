@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section className="relative overflow-hidden py-24 sm:py-28">
+    <section className="relative overflow-hidden py-14 sm:py-16">
       <Image src={item.image} alt="" fill className="object-cover" sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-b from-kg-green-dark/80 via-kg-green-dark/72 to-kg-green-dark/85" />
       <Reveal>

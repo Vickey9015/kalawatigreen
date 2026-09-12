@@ -60,17 +60,27 @@ export default function ServiceCard({ service, onSelect }: ServiceCardProps) {
       aria-label={`View details for ${service.title}`}
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kg-green-dark/30 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          aria-hidden
-        />
+        {service.image ? (
+          <>
+            <Image
+              src={service.image}
+              alt={service.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kg-green-dark/30 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              aria-hidden
+            />
+          </>
+        ) : (
+          <div className="flex h-full items-center justify-center bg-gradient-to-br from-kg-green/8 via-white to-kg-gold/12">
+            <span className="flex h-20 w-20 items-center justify-center rounded-full border border-kg-gold/30 bg-white text-kg-green shadow-md">
+              <ServiceIcon name={service.icon} className="h-10 w-10" />
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="relative z-10 -mt-6 flex justify-center">

@@ -26,8 +26,8 @@ function FilterButton({
       onClick={onClick}
       className={`rounded-full border px-3 py-2 text-[0.6875rem] font-semibold tracking-wide transition-colors sm:px-4 sm:text-xs lg:text-sm ${
         active
-          ? "border-kg-green bg-kg-green text-white"
-          : "border-kg-green/25 bg-white text-kg-green hover:border-kg-green/50 hover:bg-kg-cream"
+          ? "border-kg-gold bg-kg-gold text-white"
+          : "border-kg-green/25 bg-white text-kg-green hover:border-kg-green/50 hover:bg-kg-surface-soft"
       }`}
     >
       {label}

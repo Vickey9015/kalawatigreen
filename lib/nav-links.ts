@@ -26,7 +26,6 @@ export const footerQuickLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Spaces & Services", href: "/services" },
-  { label: "Moments", href: "/moments" },
   { label: "Contact", href: "/contact" },
 ];
 

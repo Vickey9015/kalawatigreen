@@ -42,12 +42,12 @@ export default function NavSidebar({ open, onClose }: NavSidebarProps) {
         aria-label="Close menu"
         onClick={onClose}
       />
-      <aside className="absolute right-0 top-0 flex h-full w-[min(100%,20rem)] flex-col bg-kg-green-dark shadow-2xl">
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+      <aside className="absolute right-0 top-0 flex h-full w-[min(100%,20rem)] flex-col border-l border-kg-green/10 bg-white shadow-2xl">
+        <div className="flex items-center justify-between border-b border-kg-green/10 px-5 py-4">
           <Logo variant="header" size="sm" />
           <button
             type="button"
-            className="flex h-9 w-9 items-center justify-center text-white"
+            className="flex h-9 w-9 items-center justify-center text-kg-green"
             aria-label="Close menu"
             onClick={onClose}
           >
@@ -68,8 +68,8 @@ export default function NavSidebar({ open, onClose }: NavSidebarProps) {
                     aria-current={isActive ? "page" : undefined}
                     className={`block rounded-lg px-3 py-3 text-[0.9375rem] font-semibold transition-colors ${
                       isActive
-                        ? "bg-white/15 font-bold text-kg-gold-light"
-                        : "text-white/90 hover:bg-white/10 hover:text-white"
+                        ? "bg-kg-green/8 font-bold text-kg-green"
+                        : "text-kg-green/85 hover:bg-kg-green/6 hover:text-kg-green"
                     }`}
                     onClick={onClose}
                   >
@@ -80,7 +80,7 @@ export default function NavSidebar({ open, onClose }: NavSidebarProps) {
             })}
           </ul>
         </nav>
-        <div className="border-t border-white/10 p-4">
+        <div className="border-t border-kg-green/10 p-4">
           <Link href="/contact?intent=stay" className="kg-btn-gold w-full" onClick={onClose}>
             Book a Stay
           </Link>

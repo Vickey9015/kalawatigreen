@@ -16,7 +16,7 @@ export default function VideoPageContent() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-kg-green/15 bg-kg-green-dark shadow-lg">
+        <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-kg-green/15 bg-white shadow-lg">
           {featuredVideoId ? (
             <div className="relative aspect-video w-full">
               <iframe
@@ -36,15 +36,15 @@ export default function VideoPageContent() {
                 className="object-cover opacity-80"
                 sizes="(max-width: 1024px) 100vw, 56rem"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-kg-green-dark/50 px-6 text-center">
-                <p className="text-sm text-white/90 sm:text-base">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/75 px-6 text-center backdrop-blur-sm">
+                <p className="text-sm text-kg-muted sm:text-base">
                   Video coming soon. Explore our gallery and spaces in the meantime.
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-3">
                   <Link href="/moments" className="kg-btn-primary">
                     View Gallery
                   </Link>
-                  <Link href="/services" className="kg-btn-secondary border-white text-white hover:bg-white hover:text-kg-green">
+                  <Link href="/services" className="kg-btn-secondary">
                     Explore Spaces
                   </Link>
                 </div>

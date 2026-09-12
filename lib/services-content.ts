@@ -13,7 +13,7 @@ export type ServiceItem = {
   id: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   icon: ServiceIconName;
 };
 
@@ -56,7 +56,6 @@ const curatedSpacesServices: ServiceItem[] = [
     id: "celebration-lawns",
     title: "Banquet Hall & Celebration Lawns",
     description: "Elegant venues designed for weddings and grand celebrations.",
-    image: "/images/banquet-lawns.jpg",
     icon: "hall",
   },
   {
@@ -254,12 +253,9 @@ export const servicesClosingLine =
 
 export const allServices = serviceCategories.flatMap((category) => category.services);
 
-const serviceImageById = Object.fromEntries(
-  allServices.map((service) => [service.id, service.image]),
-) as Record<string, string>;
-
 export function getServiceDetailById(id: string) {
   const detail = serviceDetails.find((item) => item.id === id);
   if (!detail) return null;
-  return { detail, image: serviceImageById[id] ?? "/images/cottage.png" };
+  const service = allServices.find((item) => item.id === id);
+  return { detail, image: service?.image, icon: service?.icon };
 }

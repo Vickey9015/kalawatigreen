@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="kg-home-main">
         <HeroSection />
         <StatsBar />
         <WelcomeSection />

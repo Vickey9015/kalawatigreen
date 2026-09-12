@@ -87,7 +87,7 @@ export default function AdminDashboardPage() {
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="rounded-2xl border border-[rgba(10,61,42,0.16)] bg-[rgba(255,255,255,0.82)] px-5 py-4 shadow-[0_8px_24px_-16px_rgba(10,61,42,0.35)]"
+            className="rounded-2xl border border-[rgba(1,49,31,0.16)] bg-[rgba(255,255,255,0.82)] px-5 py-4 shadow-[0_8px_24px_-16px_rgba(1,49,31,0.35)]"
           >
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-kg-green-light">
               {stat.label}
@@ -108,7 +108,7 @@ export default function AdminDashboardPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex items-start gap-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 transition hover:-translate-y-0.5 hover:border-kg-green/40 hover:bg-white"
+                className="group flex items-start gap-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 transition hover:-translate-y-0.5 hover:border-kg-green/40 hover:bg-white"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-kg-green/10 text-kg-green transition group-hover:bg-kg-green group-hover:text-white">
                   <AdminIcon name={item.icon} className="h-4 w-4" />
@@ -129,7 +129,7 @@ export default function AdminDashboardPage() {
             {recentActivity.map((item) => (
               <li
                 key={item.title}
-                className="rounded-xl border border-[rgba(10,61,42,0.12)] bg-[rgba(232,240,234,0.65)] px-4 py-3"
+                className="rounded-xl border border-[rgba(1,49,31,0.12)] bg-[rgba(243,242,237,0.65)] px-4 py-3"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -142,7 +142,7 @@ export default function AdminDashboardPage() {
             ))}
           </ul>
 
-          <div className="mt-5 rounded-xl border border-dashed border-[rgba(10,61,42,0.28)] bg-[rgba(10,61,42,0.06)] px-4 py-3">
+          <div className="mt-5 rounded-xl border border-dashed border-[rgba(1,49,31,0.28)] bg-[rgba(1,49,31,0.06)] px-4 py-3">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-kg-green-light">
               Brand values on site
             </p>

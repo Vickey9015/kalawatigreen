@@ -56,7 +56,7 @@ export default function AdminAboutPage() {
           {storyMissionVision.map((pillar) => (
             <div
               key={pillar.id}
-              className="grid gap-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 md:grid-cols-2"
+              className="grid gap-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 md:grid-cols-2"
             >
               <Field label="Title">
                 <TextInput defaultValue={pillar.title} />
@@ -89,7 +89,7 @@ export default function AdminAboutPage() {
 
       <AdminPanel title="Mission & vision detail">
         <div className="grid gap-4 lg:grid-cols-2">
-          <div className="space-y-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4">
+          <div className="space-y-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4">
             <Field label="Mission title">
               <TextInput defaultValue={aboutMissionFull.title} />
             </Field>
@@ -97,7 +97,7 @@ export default function AdminAboutPage() {
               <TextArea rows={3} defaultValue={aboutMissionFull.intro} />
             </Field>
           </div>
-          <div className="space-y-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4">
+          <div className="space-y-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4">
             <Field label="Vision title">
               <TextInput defaultValue={aboutVisionFull.title} />
             </Field>
@@ -122,7 +122,7 @@ export default function AdminAboutPage() {
           {aboutValues.items.map((item) => (
             <div
               key={item.title}
-              className="grid gap-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 md:grid-cols-[1fr_2fr_auto]"
+              className="grid gap-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 md:grid-cols-[1fr_2fr_auto]"
             >
               <Field label="Title">
                 <TextInput defaultValue={item.title} />

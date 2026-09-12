@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { socialLinks } from "@/lib/contact-content";
 import { footerQuickLinks, footerSpacesLinks } from "@/lib/nav-links";
@@ -42,14 +41,13 @@ function SocialIcon({ id }: { id: (typeof socialLinks)[number]["id"] }) {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden">
-      <div className="footer-leaf-pattern relative bg-kg-green-dark">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+    <footer className="w-full border-t border-kg-green/12 bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-            <div className="text-center sm:text-left lg:col-span-3 lg:border-r lg:border-kg-gold/25 lg:pr-10">
+            <div className="text-center sm:text-left lg:col-span-3 lg:border-r lg:border-kg-green/15 lg:pr-10">
               <div className="mx-auto max-w-[16rem] sm:mx-0">
                 <Logo variant="footer" className="justify-center sm:justify-start" />
-                <p className="mt-4 text-sm leading-relaxed text-white/85 sm:mt-5">
+                <p className="mt-4 text-sm leading-relaxed text-kg-muted sm:mt-5">
                   A forest. A retreat.
                   <br />
                   A celebration.
@@ -64,7 +62,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-kg-gold-light hover:text-kg-gold-light"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-kg-green/25 text-kg-green transition-colors hover:border-kg-gold hover:bg-kg-gold/10 hover:text-kg-gold"
                     >
                       <SocialIcon id={link.id} />
                     </a>
@@ -74,17 +72,17 @@ export default function Footer() {
             </div>
 
             <div className="text-center sm:text-left lg:col-span-2">
-              <h3 className="mb-4 text-base font-bold text-white sm:mb-5">Quick Links</h3>
-              <ul className="space-y-2.5 text-sm text-white/90 sm:space-y-3">
+              <h3 className="mb-4 text-base font-bold text-kg-green-dark sm:mb-5">Quick Links</h3>
+              <ul className="space-y-2.5 text-sm text-kg-muted sm:space-y-3">
                 {footerQuickLinks.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="transition-colors hover:text-kg-gold-light">
+                    <Link href={link.href} className="transition-colors hover:text-kg-green">
                       {link.label}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/privacy" className="transition-colors hover:text-kg-gold-light">
+                  <Link href="/privacy" className="transition-colors hover:text-kg-green">
                     Privacy Policy
                   </Link>
                 </li>
@@ -92,11 +90,11 @@ export default function Footer() {
             </div>
 
             <div className="text-center sm:text-left lg:col-span-3">
-              <h3 className="mb-4 text-base font-bold text-white sm:mb-5">Our Spaces</h3>
-              <ul className="space-y-2.5 text-sm text-white/90 sm:space-y-3">
+              <h3 className="mb-4 text-base font-bold text-kg-green-dark sm:mb-5">Our Spaces</h3>
+              <ul className="space-y-2.5 text-sm text-kg-muted sm:space-y-3">
                 {footerSpacesLinks.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className="transition-colors hover:text-kg-gold-light">
+                    <Link href={link.href} className="transition-colors hover:text-kg-green">
                       {link.label}
                     </Link>
                   </li>
@@ -105,8 +103,8 @@ export default function Footer() {
             </div>
 
             <div className="text-center sm:text-left lg:col-span-4">
-              <h3 className="mb-4 text-base font-bold text-white sm:mb-5">Newsletter</h3>
-              <p className="text-sm leading-relaxed text-white/85">
+              <h3 className="mb-4 text-base font-bold text-kg-green-dark sm:mb-5">Newsletter</h3>
+              <p className="text-sm leading-relaxed text-kg-muted">
                 Get seasonal updates, events, and forest-retreat stories.
               </p>
               <form
@@ -124,76 +122,34 @@ export default function Footer() {
                   type="email"
                   required
                   placeholder="Your email"
-                  className="min-w-0 flex-1 rounded-sm border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/50"
+                  className="min-w-0 flex-1 rounded-sm border border-kg-green/20 bg-white px-3 py-2.5 text-sm text-kg-text placeholder:text-kg-muted/70"
                 />
                 <button type="submit" className="kg-btn-gold px-4 py-2.5">
                   Join
                 </button>
               </form>
-              <div className="mt-6">
-                <h3 className="mb-3 text-base font-bold text-white">Gallery</h3>
-                <div className="flex justify-center gap-2 sm:justify-start">
-                  {["/images/gallery/moment-01.png", "/images/gallery/moment-07.png", "/images/gallery/moment-08.png"].map(
-                    (src) => (
-                      <Link key={src} href="/moments" className="relative h-16 w-16 overflow-hidden rounded-sm sm:h-16 sm:w-16">
-                        <Image src={src} alt="" fill className="object-cover" sizes="64px" />
-                      </Link>
-                    ),
-                  )}
-                </div>
-              </div>
-              <address className="mt-6 space-y-3 break-words text-sm not-italic text-white/90">
+              <address className="mt-6 space-y-3 break-words text-sm not-italic text-kg-muted">
                 <p>{contactInfo.address}</p>
                 <p>
-                  <a href={`tel:${contactInfo.phone.replace(/\s/g, "")}`} className="hover:text-white">
+                  <a href={`tel:${contactInfo.phone.replace(/\s/g, "")}`} className="hover:text-kg-green">
                     {contactInfo.phone}
                   </a>
                 </p>
                 <p>
-                  <a href={`mailto:${contactInfo.email}`} className="hover:text-white">
+                  <a href={`mailto:${contactInfo.email}`} className="hover:text-kg-green">
                     {contactInfo.email}
                   </a>
                 </p>
               </address>
             </div>
           </div>
-        </div>
       </div>
 
-      <div className="relative border-t border-white/10 bg-[#1a4d35] px-4 py-4">
-        <p className="text-center text-xs leading-relaxed text-white/85 sm:text-sm">
+      <div className="border-t border-kg-green/12 bg-kg-surface-soft px-4 py-4">
+        <p className="text-center text-xs leading-relaxed text-kg-muted sm:text-sm">
           © {new Date().getFullYear()} Kalawati Greens. All Rights Reserved.
         </p>
       </div>
-
-      <FooterLeaves />
     </footer>
-  );
-}
-
-function FooterLeaves() {
-  return (
-    <div
-      className="pointer-events-none absolute bottom-0 right-0 z-10 hidden h-36 w-44 sm:block sm:h-44 sm:w-52"
-      aria-hidden
-    >
-      <svg viewBox="0 0 220 200" className="h-full w-full" fill="none">
-        <path
-          d="M200 190c-8-45 5-85 35-110 12-18 30-32 18-50-18 8-35 28-42 52-6-35 8-72 38-95-8 45-2 88 22 125 14 20 35 32 48 25-20-6-40-6-58 8-14 12-20 32-14 55z"
-          fill="#2f9b5a"
-        />
-        <path
-          d="M145 195c6-28 2-55-18-76-14-16-32-28-26-48 15 7 28 24 32 42 4-24 16-46 36-60-10 28-7 58 12 82 10 13 22 21 34 18-16-3-32-1-46 12-11 10-16 26-11 44z"
-          fill="#3cb86c"
-        />
-        <path
-          d="M95 198c0-20-10-38-26-52-10-10-22-18-18-32 12 5 22 18 24 32 3-16 12-32 28-42-8 22-5 46 10 64 8 10 18 15 28 12-12-2-24 2-34 14-8 9-11 22-7 38z"
-          fill="#52cc7f"
-        />
-        <path d="M175 120 L195 40 L205 120 Z" fill="#45b86a" opacity="0.9" />
-        <path d="M155 130 L170 55 L180 135 Z" fill="#3aa85e" opacity="0.85" />
-        <path d="M135 140 L148 70 L158 145 Z" fill="#2f9b5a" opacity="0.8" />
-      </svg>
-    </div>
   );
 }

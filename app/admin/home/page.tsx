@@ -63,7 +63,7 @@ export default function AdminHomePage() {
           {signatureHighlights.map((item, index) => (
             <div
               key={item.title}
-              className="grid gap-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 md:grid-cols-[1fr_1fr_auto]"
+              className="grid gap-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 md:grid-cols-[1fr_1fr_auto]"
             >
               <Field label={`Title ${index + 1}`}>
                 <TextInput defaultValue={item.title} />
@@ -93,7 +93,7 @@ export default function AdminHomePage() {
           {whyChooseUsItems.map((item, index) => (
             <div
               key={item.title}
-              className="flex flex-col gap-3 rounded-xl border border-[rgba(10,61,42,0.14)] bg-[rgba(232,240,234,0.65)] p-4 sm:flex-row sm:items-end"
+              className="flex flex-col gap-3 rounded-xl border border-[rgba(1,49,31,0.14)] bg-[rgba(243,242,237,0.65)] p-4 sm:flex-row sm:items-end"
             >
               <div className="flex-1">
                 <Field label={`Point ${index + 1}`}>

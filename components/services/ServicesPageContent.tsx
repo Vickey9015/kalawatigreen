@@ -114,7 +114,12 @@ export default function ServicesPageContent() {
       </section>
 
       {selected && (
-        <ServiceDetailModal detail={selected.detail} image={selected.image} onClose={closeDetail} />
+        <ServiceDetailModal
+          detail={selected.detail}
+          image={selected.image}
+          icon={selected.icon}
+          onClose={closeDetail}
+        />
       )}
     </>
   );

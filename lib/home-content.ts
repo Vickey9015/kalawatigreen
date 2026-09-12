@@ -1,3 +1,5 @@
+import type { ServiceIconName } from "./services-content";
+
 export const heroHeadline = ["A Forest.", "A Retreat.", "A Celebration."] as const;
 
 export const heroSubtitle =
@@ -51,10 +53,10 @@ export const heroImage = "/images/hero.jpg";
 export const heroImageDesktop = "/images/hero.jpg";
 
 export const homeStats = [
-  { value: "7,000", label: "Oxygen Produced — Approx. Tons/Yr", icon: "oxygen" },
-  { value: "2,80,000+", label: "Plants & Trees", icon: "plants" },
-  { value: "4,000+", label: "Varieties", icon: "varieties" },
-  { value: "8,000", label: "Carbon Dioxide Absorbed — Approx. Tons/Yr", icon: "carbon" },
+  { value: "7,000", title: "Oxygen Produced", subtitle: "Approx. Tons / Yr", icon: "oxygen" },
+  { value: "2,80,000+", title: "Plants & Trees", subtitle: "Living forest canopy", icon: "plants" },
+  { value: "4,000+", title: "Varieties", subtitle: "Native & exotic species", icon: "varieties" },
+  { value: "8,000", title: "CO₂ Absorbed", subtitle: "Approx. Tons / Yr", icon: "carbon" },
 ] as const;
 
 export const welcomeContent = {
@@ -73,71 +75,62 @@ export const experiencePillars = [
   {
     eyebrow: "Curated Spaces",
     slogan: "Natural Elegance.",
-    image: "/images/cottage.png",
+    icon: "spaces",
     items: [
       {
         title: "Luxury Cottages",
         description: "Private retreats nestled amidst lush greenery.",
-        image: "/images/cottage.png",
       },
       {
         title: "Conference Hall",
         description: "A refined setting for meetings, seminars, and corporate gatherings.",
-        image: "/images/conference.png",
       },
       {
         title: "Banquet Hall & Celebration Lawns",
         description: "Elegant venues designed for weddings and grand celebrations.",
-        image: "/images/banquet-lawns.jpg",
       },
       {
         title: "Tropical Swimming Pool",
         description: "A tranquil oasis for relaxation and leisure.",
-        image: "/images/pool.png",
       },
     ],
   },
   {
     eyebrow: "Drink & Dine",
     slogan: "Flavours Inspired by Nature",
-    image: "/images/restaurant.png",
+    icon: "dine",
     items: [
       {
         title: "Palash Restaurant",
         description:
           "A vibrant multi-cuisine restaurant where flavour, freshness, and culinary artistry come together.",
-        image: "/images/restaurant.png",
       },
       {
         title: "Baa-Ya-Bia Bar",
         description:
           "A stylish tropical bar offering premium spirits, refreshing cocktails, and an inviting ambiance.",
-        image: "/images/bar.png",
       },
     ],
   },
   {
     eyebrow: "Grand Venues",
     slogan: "Celebrating in Nature",
-    image: "/images/lawn-upawan.png",
+    icon: "venues",
     items: [
       {
         title: "Gulmohar Hall",
         description:
           "An elegant indoor banquet venue designed for weddings, receptions, and corporate events.",
-        image: "/images/banquet.png",
       },
       {
         title: "Upawan Lawn",
         description:
           "A spacious outdoor lawn surrounded by lush greenery — a serene forest retreat away from city noise.",
-        image: "/images/lawn-upawan.png",
       },
       {
         title: "Jalaj Lawn",
         description:
           "A picturesque lawn with a unique floating stage, perfect for grand celebrations and lasting memories.",
-        image: "/images/lawn-jalaj.png",
       },
     ],
   },
@@ -155,7 +148,15 @@ export const spacesSection = {
   subtitle: "Natural Elegance. — unforgettable stays, celebrations, and getaways rooted in nature.",
 } as const;
 
-export const homeSpaces = [
+export type HomeSpaceItem = {
+  id: string;
+  title: string;
+  description: string;
+  image?: string;
+  icon?: ServiceIconName;
+};
+
+export const homeSpaces: HomeSpaceItem[] = [
   {
     id: "cottages",
     title: "Luxury Cottages",
@@ -172,7 +173,7 @@ export const homeSpaces = [
     id: "banquet",
     title: "Banquet Hall & Lawns",
     description: "Elegant venues designed for weddings and grand celebrations.",
-    image: "/images/banquet-lawns.jpg",
+    icon: "hall",
   },
   {
     id: "pool",
@@ -210,33 +211,22 @@ export const homeSpaces = [
     description: "A picturesque lawn with a unique floating stage for grand celebrations.",
     image: "/images/lawn-jalaj.png",
   },
-] as const;
+];
 
-export const homeVideos = [
-  {
-    title: "Resort Overview",
-    image: "/images/cottage.png",
-  },
-  {
-    title: "Nature & Ambience",
-    image: "/images/lawn-upawan.png",
-  },
-  {
-    title: "Pool & Leisure",
-    image: "/images/pool.png",
-  },
-] as const;
+import { homeGalleryVideos, type HomeGalleryVideo } from "./video-content";
+
+export const homeVideos: HomeGalleryVideo[] = homeGalleryVideos;
 
 export const homeMoments = [
   { label: "Weddings", image: "/images/gallery/moment-01.png" },
   { label: "Lawns & Outdoors", image: "/images/gallery/moment-04.png" },
   { label: "Cottages & Rooms", image: "/images/gallery/moment-10.png" },
   { label: "Poolside Views", image: "/images/gallery/moment-07.png" },
-  { label: "Crafted Dining", image: "/images/gallery/moment-08.png" },
+  { label: "Palash Restaurant", image: "/images/restaurant.png" },
   { label: "Night Ambience", image: "/images/gallery/moment-05.png" },
   { label: "Celebrations", image: "/images/gallery/moment-03.png" },
   { label: "Evening Lights", image: "/images/gallery/moment-06.png" },
-  { label: "Restaurant & Bar", image: "/images/gallery/moment-09.png" },
+  { label: "Baa-Ya-Bia Bar", image: "/images/bar.png" },
   { label: "Forest Retreat", image: "/images/gallery/moment-11.png" },
 ] as const;
 

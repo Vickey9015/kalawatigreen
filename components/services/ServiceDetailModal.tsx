@@ -3,15 +3,17 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import type { ServiceDetail } from "@/lib/services-content";
+import { ServiceIcon } from "@/components/services/ServiceIcons";
+import type { ServiceDetail, ServiceIconName } from "@/lib/services-content";
 
 type ServiceDetailModalProps = {
   detail: ServiceDetail;
-  image: string;
+  image?: string;
+  icon?: ServiceIconName;
   onClose: () => void;
 };
 
-export default function ServiceDetailModal({ detail, image, onClose }: ServiceDetailModalProps) {
+export default function ServiceDetailModal({ detail, image, icon, onClose }: ServiceDetailModalProps) {
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -45,8 +47,20 @@ export default function ServiceDetailModal({ detail, image, onClose }: ServiceDe
 
       <div className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-t-2xl bg-kg-cream shadow-2xl sm:rounded-2xl">
         <div className="relative aspect-[16/9] w-full shrink-0">
-          <Image src={image} alt={detail.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 42rem" />
-          <div className="absolute inset-0 bg-gradient-to-t from-kg-green-dark/60 to-transparent" aria-hidden />
+          {image ? (
+            <>
+              <Image src={image} alt={detail.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 42rem" />
+              <div className="absolute inset-0 bg-gradient-to-t from-kg-green-dark/60 to-transparent" aria-hidden />
+            </>
+          ) : (
+            <div className="flex h-full items-center justify-center bg-gradient-to-br from-kg-green/10 via-white to-kg-gold/12">
+              {icon ? (
+                <span className="flex h-24 w-24 items-center justify-center rounded-full border border-kg-gold/35 bg-white text-kg-green shadow-lg">
+                  <ServiceIcon name={icon} className="h-11 w-11" />
+                </span>
+              ) : null}
+            </div>
+          )}
           <button
             type="button"
             onClick={onClose}
