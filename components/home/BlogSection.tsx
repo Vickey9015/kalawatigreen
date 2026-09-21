@@ -58,7 +58,7 @@ export default function BlogSection() {
         <Reveal>
           <div className="text-center">
             <p className="kg-eyebrow">Journal</p>
-            <h2 className="kg-display-title mt-4 text-4xl uppercase text-kg-green-dark sm:text-5xl">
+            <h2 className="kg-display-title kg-home-section-title mt-4 uppercase text-kg-green-dark">
               Latest From Our Blog
             </h2>
           </div>
@@ -86,7 +86,7 @@ export default function BlogSection() {
 
       <div
         ref={scrollerRef}
-        className="kg-space-track mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-4 sm:px-8"
+        className="kg-space-track mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[max(1rem,env(safe-area-inset-left))] pb-4 pr-[max(1rem,env(safe-area-inset-right))] scroll-pl-4 sm:mt-10 sm:gap-6 sm:px-8"
       >
         {blogPosts.map((post) => (
           <article
@@ -100,7 +100,7 @@ export default function BlogSection() {
             <p className="mt-4 text-[0.7rem] uppercase tracking-[0.18em] text-kg-gold">
               {post.date} {post.month}
             </p>
-            <h3 className="mt-2 font-serif text-2xl text-kg-green-dark">{post.title}</h3>
+            <h3 className="mt-2 font-serif text-xl text-kg-green-dark sm:text-2xl">{post.title}</h3>
             <p className="mt-2 text-sm leading-6 text-kg-muted">{post.excerpt}</p>
             <Link href="/about" className="mt-4 inline-flex text-xs uppercase tracking-[0.16em] text-kg-gold">
               Continue reading

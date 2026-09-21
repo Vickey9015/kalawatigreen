@@ -110,6 +110,19 @@ export const aboutClosingQuote =
 
 export const aboutClosingImage = "/images/gallery/moment-07.png";
 
+export const aboutHeroImages = {
+  primary: "/images/lawn-upawan.png",
+  secondary: "/images/gallery/moment-10.png",
+  accent: "/images/cottage.png",
+} as const;
+
+export const aboutFacts = [
+  { value: "4+", title: "Acres", subtitle: "Immersive forest retreat" },
+  { value: "Nov 2022", title: "Established", subtitle: "A living vision in growth" },
+  { value: "4,000+", title: "Plant varieties", subtitle: "Miyawaki-inspired greens" },
+  { value: "3", title: "Guiding pillars", subtitle: "Story, mission & vision" },
+] as const;
+
 export type AboutPillarId = "story" | "mission" | "vision";
 
 export const aboutPillarImages: Record<AboutPillarId, string> = {

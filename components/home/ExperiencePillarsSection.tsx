@@ -35,16 +35,16 @@ export default function ExperiencePillarsSection() {
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <p className="kg-eyebrow">The Kalawati Greens experience</p>
-            <h2 className="kg-display-title mt-4 text-4xl text-kg-green-dark sm:text-5xl">
+            <h2 className="kg-display-title kg-home-section-title mt-4 text-kg-green-dark">
               Rooted in Nature. Crafted for Celebration.
             </h2>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-3">
           {experiencePillars.map((pillar, index) => (
             <Reveal key={pillar.eyebrow} delayMs={index * 100}>
-              <article className="flex h-full flex-col rounded-[1.75rem] border border-kg-green/15 bg-white p-6 shadow-xl shadow-kg-green/8 sm:p-7">
+              <article className="flex h-full flex-col rounded-[1.5rem] border border-kg-green/15 bg-white p-5 shadow-xl shadow-kg-green/8 sm:rounded-[1.75rem] sm:p-7">
                 <div className="flex flex-col items-center text-center">
                   <span
                     className="flex h-14 w-14 items-center justify-center rounded-2xl border border-kg-gold/35 bg-kg-gold/10 text-kg-green"

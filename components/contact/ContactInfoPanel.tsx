@@ -3,8 +3,8 @@ import { contactInfo } from "@/lib/site";
 
 function ContactIcon({ children }: { children: React.ReactNode }) {
   return (
-    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-kg-green/30 text-kg-green">
-      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-kg-gold-light ring-1 ring-white/15">
+      <svg className="h-[1.125rem] w-[1.125rem]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
         {children}
       </svg>
     </span>
@@ -48,86 +48,108 @@ function SocialIcon({ id }: { id: (typeof socialLinks)[number]["id"] }) {
 }
 
 export default function ContactInfoPanel() {
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.mapQuery)}`;
+
   return (
-    <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-      <h2 className="text-xl font-bold text-kg-green sm:text-2xl">Get In Touch</h2>
+    <div className="relative flex h-full flex-col bg-kg-green-dark px-6 py-10 text-white sm:px-8 sm:py-12 lg:px-10">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(198,170,88,0.14),transparent)]"
+        aria-hidden
+      />
 
-      <ul className="mt-8 space-y-6">
-        <li className="flex gap-4">
-          <ContactIcon>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.75}
-              d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"
-            />
-            <circle cx="12" cy="10" r="2.25" strokeWidth={1.75} />
-          </ContactIcon>
-          <p className="pt-1.5 text-sm leading-relaxed text-kg-green sm:text-base">
-            {contactInfo.address}
-          </p>
-        </li>
+      <div className="relative">
+        <p className="kg-eyebrow text-kg-gold-light">Direct lines</p>
+        <h2 className="kg-display-title mt-3 text-2xl text-white sm:text-[1.65rem]">Talk to our team</h2>
+        <p className="mt-3 text-sm leading-6 text-white/78">{visitInfo.response}</p>
 
-        <li className="flex gap-4">
-          <ContactIcon>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.75}
-              d="M6.5 4.8c.4-.9 1.5-1.2 2.3-.6l1.6 1.2c.7.5.8 1.5.3 2.2l-.7.9c.8 1.6 2.1 2.9 3.7 3.7l.9-.7c.7-.5 1.7-.4 2.2.3l1.2 1.6c.6.8.3 1.9-.6 2.3-1 .5-2.1.8-3.2.8-4.1 0-8-3.9-8-8 0-1.1.3-2.2.8-3.2z"
-            />
-          </ContactIcon>
-          <div className="space-y-1 pt-1.5 text-sm text-kg-green sm:text-base">
-            {contactInfo.phones.map((phone) => (
-              <p key={phone}>
-                <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-kg-green-light">
-                  {phone}
-                </a>
-              </p>
+        <ul className="mt-8 space-y-5">
+          <li className="flex gap-4">
+            <ContactIcon>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.75}
+                d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"
+              />
+              <circle cx="12" cy="10" r="2.25" strokeWidth={1.75} />
+            </ContactIcon>
+            <div className="min-w-0 pt-0.5">
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/55">Address</p>
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block text-sm leading-relaxed text-white/95 hover:text-kg-gold-light"
+              >
+                {contactInfo.address}
+              </a>
+            </div>
+          </li>
+
+          <li className="flex gap-4">
+            <ContactIcon>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.75}
+                d="M6.5 4.8c.4-.9 1.5-1.2 2.3-.6l1.6 1.2c.7.5.8 1.5.3 2.2l-.7.9c.8 1.6 2.1 2.9 3.7 3.7l.9-.7c.7-.5 1.7-.4 2.2.3l1.2 1.6c.6.8.3 1.9-.6 2.3-1 .5-2.1.8-3.2.8-4.1 0-8-3.9-8-8 0-1.1.3-2.2.8-3.2z"
+              />
+            </ContactIcon>
+            <div className="pt-0.5">
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/55">Phone</p>
+              <div className="mt-1 space-y-0.5 text-sm text-white/95">
+                {contactInfo.phones.map((phone) => (
+                  <p key={phone}>
+                    <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-kg-gold-light">
+                      {phone}
+                    </a>
+                  </p>
+                ))}
+              </div>
+            </div>
+          </li>
+
+          <li className="flex gap-4">
+            <ContactIcon>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.75}
+                d="M4 7.5A2.5 2.5 0 016.5 5h11A2.5 2.5 0 0120 7.5v9A2.5 2.5 0 0117.5 19h-11A2.5 2.5 0 014 16.5v-9z"
+              />
+              <path strokeLinecap="round" strokeWidth={1.75} d="M5 8l7 5 7-5" />
+            </ContactIcon>
+            <div className="min-w-0 pt-0.5">
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white/55">Email</p>
+              <a href={`mailto:${contactInfo.email}`} className="mt-1 block truncate text-sm text-white/95 hover:text-kg-gold-light">
+                {contactInfo.email}
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div className="mt-8 rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur-sm">
+          <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-kg-gold-light">Visiting hours</p>
+          <p className="mt-2 text-sm text-white/92">{visitInfo.hours}</p>
+          <p className="mt-1 text-xs leading-5 text-white/65">{visitInfo.note}</p>
+        </div>
+
+        <div className="mt-8 border-t border-white/15 pt-8">
+          <p className="text-sm font-semibold text-white/95">Follow us</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {socialLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white transition hover:border-kg-gold-light hover:bg-white/10"
+              >
+                <SocialIcon id={link.id} />
+              </a>
             ))}
           </div>
-        </li>
-
-        <li className="flex gap-4">
-          <ContactIcon>
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.75}
-              d="M4 7.5A2.5 2.5 0 016.5 5h11A2.5 2.5 0 0120 7.5v9A2.5 2.5 0 0117.5 19h-11A2.5 2.5 0 014 16.5v-9z"
-            />
-            <path strokeLinecap="round" strokeWidth={1.75} d="M5 8l7 5 7-5" />
-          </ContactIcon>
-          <p className="pt-1.5 text-sm text-kg-green sm:text-base">
-            <a href={`mailto:${contactInfo.email}`} className="hover:text-kg-green-light">
-              {contactInfo.email}
-            </a>
-          </p>
-        </li>
-      </ul>
-
-      <div className="mt-8 rounded-xl border border-kg-green/15 bg-white/80 px-4 py-4">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-kg-green">Visiting Hours</h3>
-        <p className="mt-2 text-sm text-kg-green">{visitInfo.hours}</p>
-        <p className="mt-1 text-xs text-kg-muted">{visitInfo.note}</p>
-        <p className="mt-3 text-xs font-medium text-kg-green-light">{visitInfo.response}</p>
-      </div>
-
-      <div className="mt-10">
-        <h3 className="text-lg font-bold text-kg-green">Follow Us</h3>
-        <div className="mt-4 flex flex-wrap gap-3">
-          {socialLinks.map((link) => (
-            <a
-              key={link.id}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-kg-green/35 text-kg-green transition-colors hover:border-kg-green hover:bg-kg-green hover:text-white"
-            >
-              <SocialIcon id={link.id} />
-            </a>
-          ))}
         </div>
       </div>
     </div>

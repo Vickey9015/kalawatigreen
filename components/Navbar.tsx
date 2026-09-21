@@ -62,8 +62,12 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link href="/contact?intent=stay" className="kg-btn-gold hidden whitespace-nowrap sm:inline-flex">
-              Book a Stay
+            <Link
+              href="/contact/?intent=stay"
+              className="kg-btn-gold inline-flex whitespace-nowrap px-3.5 py-2.5 text-[0.65rem] sm:px-6 sm:py-3 sm:text-xs"
+            >
+              <span className="sm:hidden">Book</span>
+              <span className="hidden sm:inline">Book a Stay</span>
             </Link>
             <button
               type="button"

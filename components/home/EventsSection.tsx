@@ -58,7 +58,7 @@ export default function EventsSection() {
         <Reveal>
           <div className="text-center">
             <p className="kg-eyebrow">The calendar</p>
-            <h2 className="kg-display-title mt-4 text-4xl uppercase text-kg-green-dark sm:text-5xl">Upcoming Events</h2>
+            <h2 className="kg-display-title kg-home-section-title mt-4 uppercase text-kg-green-dark">Upcoming Events</h2>
             <Link href="/contact" className="mt-3 inline-flex text-xs uppercase tracking-[0.16em] text-kg-gold">
               View all events
             </Link>
@@ -87,7 +87,7 @@ export default function EventsSection() {
 
       <div
         ref={scrollerRef}
-        className="kg-space-track mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-4 sm:px-8"
+        className="kg-space-track mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[max(1rem,env(safe-area-inset-left))] pb-4 pr-[max(1rem,env(safe-area-inset-right))] scroll-pl-4 sm:mt-10 sm:gap-6 sm:px-8"
       >
         {upcomingEvents.map((event) => (
           <article

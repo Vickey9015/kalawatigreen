@@ -1,9 +1,17 @@
 export const videoPageHeader = {
-  title: "Video Section",
-  subtitle: "Experience Kalawati Greens in motion",
+  eyebrow: "Cinematic glimpses",
+  title: "Experience Kalawati Greens in motion",
   description:
-    "Take a visual journey through our forest-inspired retreat — from lush green landscapes and luxury cottages to grand celebrations and serene poolside moments.",
+    "From lush landscapes and luxury cottages to grand celebrations and poolside calm — watch the retreat come alive.",
 } as const;
+
+export const videoHeroImages = {
+  backdrop: "/images/top_bg_image.png",
+  accent: "/images/lawn-upawan.png",
+  closing: "/images/cottage.png",
+} as const;
+
+export const videoThemes = ["Forest retreat", "Celebrations", "Pool & leisure"] as const;
 
 /** Replace with your YouTube video ID when available, e.g. "dQw4w9WgXcQ" */
 export const featuredVideoId = "";

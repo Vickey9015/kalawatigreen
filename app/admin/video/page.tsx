@@ -33,11 +33,11 @@ export default function AdminVideoPage() {
       <AdminPanel title="Page header">
         <div className="grid gap-4">
           <div className="grid gap-4 md:grid-cols-2">
+            <Field label="Eyebrow">
+              <TextInput defaultValue={videoPageHeader.eyebrow} />
+            </Field>
             <Field label="Title">
               <TextInput defaultValue={videoPageHeader.title} />
-            </Field>
-            <Field label="Subtitle">
-              <TextInput defaultValue={videoPageHeader.subtitle} />
             </Field>
           </div>
           <Field label="Description">

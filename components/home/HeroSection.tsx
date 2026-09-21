@@ -29,7 +29,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative h-[100svh] min-h-[40rem] overflow-hidden bg-kg-green-dark">
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-kg-green-dark">
       {heroCinematic.map((slide, index) => (
         <div
           key={slide.image}
@@ -48,69 +48,85 @@ export default function HeroSection() {
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-kg-green-dark/65 via-kg-green-dark/20 to-kg-green-dark/75" />
+      <div className="absolute inset-0 bg-gradient-to-b from-kg-green-dark/65 via-kg-green-dark/20 to-kg-green-dark/80" />
       <div className="absolute inset-0 bg-gradient-to-r from-kg-green-dark/55 via-transparent to-transparent" />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-52 pt-28 sm:px-6 sm:pb-44 lg:px-8 lg:pb-40">
-        <p className="kg-slow-fade text-xs font-semibold uppercase tracking-[0.32em] text-kg-gold-light">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-4 pb-4 pt-24 sm:px-6 sm:pb-6 lg:px-8 lg:pt-28">
+        <p className="kg-slow-fade text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-kg-gold-light sm:text-xs sm:tracking-[0.32em]">
           {homeBooking.kicker}
         </p>
-        <h1 className="kg-hero-title kg-slow-fade mt-4 max-w-3xl text-5xl leading-[1.05] text-white sm:text-7xl lg:text-[5.4rem]">
+        <h1 className="kg-hero-title kg-slow-fade mt-3 max-w-3xl text-[2.15rem] leading-[1.08] text-white sm:mt-4 sm:text-5xl md:text-6xl lg:text-[5.4rem]">
           {heroHeadline.map((line) => (
             <span key={line} className="block">
               {line}
             </span>
           ))}
         </h1>
-        <p className="kg-slow-fade mt-6 max-w-xl text-base leading-relaxed text-white/88 sm:text-lg">
+        <p className="kg-slow-fade mt-4 max-w-xl text-sm leading-relaxed text-white/88 sm:mt-6 sm:text-base md:text-lg">
           {heroSubtitle}
         </p>
-        <div className="kg-slow-fade mt-8 flex flex-wrap items-center gap-4">
-          <Link href="/contact" className="kg-btn-gold">
+        <div className="kg-slow-fade mt-6 flex flex-wrap items-center gap-3 sm:mt-8 sm:gap-4">
+          <Link href="/contact/" className="kg-btn-gold px-5 py-3 text-[0.7rem] sm:px-6 sm:text-xs">
             {homeBooking.primaryCta}
           </Link>
           <Link
-            href="/video"
-            className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white"
+            href="/video/"
+            className="inline-flex items-center gap-2.5 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white sm:gap-3 sm:text-xs sm:tracking-[0.18em]"
           >
-            <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/70 bg-white/10 backdrop-blur-md">
-              <svg className="ml-0.5 h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/70 bg-white/10 backdrop-blur-md sm:h-12 sm:w-12">
+              <svg className="ml-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                 <path d="M9 7.5v9l8-4.5-8-4.5z" />
               </svg>
             </span>
-            Watch film
+            <span className="max-[360px]:hidden sm:inline">Watch film</span>
+            <span className="min-[361px]:hidden sm:hidden">Film</span>
           </Link>
+        </div>
+
+        <div className="mt-6 flex justify-center gap-1.5 lg:hidden" aria-label="Hero slides">
+          {heroCinematic.map((slide, index) => (
+            <button
+              key={slide.image}
+              type="button"
+              aria-label={`Show image ${index + 1}`}
+              aria-current={index === active ? "true" : undefined}
+              onClick={() => setActive(index)}
+              className={`rounded-full transition-all ${
+                index === active ? "h-2 w-6 bg-kg-gold-light" : "h-2 w-2 bg-white/45"
+              }`}
+            />
+          ))}
         </div>
       </div>
 
       <form
         onSubmit={handleBook}
-        className="kg-glass absolute inset-x-4 bottom-6 z-20 mx-auto grid max-w-5xl gap-3 rounded-2xl p-4 text-white shadow-2xl sm:inset-x-6 sm:grid-cols-[1fr_1fr_8rem_auto] sm:items-end lg:px-6"
+        className="kg-glass relative z-20 mx-4 mb-4 grid grid-cols-2 gap-3 rounded-2xl p-3.5 text-white shadow-2xl sm:mx-6 sm:mb-6 sm:max-w-5xl sm:p-4 sm:grid-cols-[1fr_1fr_7rem_auto] sm:items-end lg:mx-auto lg:px-6"
       >
-        <label className="block text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/70">
+        <label className="block text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-white/70 sm:text-[0.65rem] sm:tracking-[0.18em]">
           Check in
           <input
             type="date"
             name="checkin"
             required
-            className="mt-1.5 w-full border-0 border-b border-white/30 bg-transparent py-2 text-sm text-white outline-none [color-scheme:dark]"
+            className="mt-1 w-full min-w-0 border-0 border-b border-white/30 bg-transparent py-2 text-sm text-white outline-none [color-scheme:dark]"
           />
         </label>
-        <label className="block text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/70">
+        <label className="block text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-white/70 sm:text-[0.65rem] sm:tracking-[0.18em]">
           Check out
           <input
             type="date"
             name="checkout"
             required
-            className="mt-1.5 w-full border-0 border-b border-white/30 bg-transparent py-2 text-sm text-white outline-none [color-scheme:dark]"
+            className="mt-1 w-full min-w-0 border-0 border-b border-white/30 bg-transparent py-2 text-sm text-white outline-none [color-scheme:dark]"
           />
         </label>
-        <label className="block text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/70">
+        <label className="col-span-1 block text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-white/70 sm:text-[0.65rem] sm:tracking-[0.18em]">
           Guests
           <select
             name="guests"
             defaultValue="2"
-            className="mt-1.5 w-full border-0 border-b border-white/30 bg-transparent py-2 text-sm text-white outline-none"
+            className="mt-1 w-full min-w-0 border-0 border-b border-white/30 bg-transparent py-2 text-sm text-white outline-none"
           >
             {["1", "2", "3", "4", "5", "6+"].map((value) => (
               <option key={value} value={value} className="text-kg-green-dark">
@@ -119,8 +135,9 @@ export default function HeroSection() {
             ))}
           </select>
         </label>
-        <button type="submit" className="kg-btn-gold mt-2 h-12 sm:mt-0">
-          Check availability
+        <button type="submit" className="kg-btn-gold col-span-1 h-11 self-end px-3 text-[0.65rem] sm:col-auto sm:mt-0 sm:h-12 sm:px-5 sm:text-xs">
+          <span className="sm:hidden">Check</span>
+          <span className="hidden sm:inline">Check availability</span>
         </button>
       </form>
 

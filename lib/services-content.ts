@@ -37,6 +37,12 @@ export const servicesPageHeader = {
   subtitle: "Curated experiences across stays, dining, and celebrations — all rooted in nature.",
 } as const;
 
+export const servicesHeroImages = {
+  primary: "/images/cottage.png",
+  secondary: "/images/restaurant.png",
+  accent: "/images/lawn-upawan.png",
+} as const;
+
 const curatedSpacesServices: ServiceItem[] = [
   {
     id: "cottages",

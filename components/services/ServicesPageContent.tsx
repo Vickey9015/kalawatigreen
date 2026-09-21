@@ -2,28 +2,14 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import ServiceCard from "@/components/services/ServiceCard";
+import Reveal from "@/components/Reveal";
 import ServiceDetailModal from "@/components/services/ServiceDetailModal";
+import ServiceRowCard from "@/components/services/ServiceRowCard";
 import {
   getServiceDetailById,
   serviceCategories,
   servicesClosingLine,
-  servicesPageHeader,
 } from "@/lib/services-content";
-
-function CornerLeaves({ className }: { className: string }) {
-  return (
-    <svg
-      className={`pointer-events-none absolute h-32 w-32 text-kg-green/20 sm:h-40 sm:w-40 ${className}`}
-      viewBox="0 0 120 120"
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M10 95c8-35 22-55 45-70 8-6 18-12 12-22-12 6-22 20-28 38-4-22 6-48 28-62-6 28-2 54 14 76 8 12 20 18 30 14-12-4-26-4-38 6-10 8-14 22-10 38z" />
-      <path d="M55 98c4-18 2-34-10-46-8-8-18-14-14-26 8 4 14 14 16 26 2-14 10-28 24-36-6 16-4 34 8 48 6 8 14 12 22 10-10-2-20 0-28 10-6 8-8 18-4 30z" />
-    </svg>
-  );
-}
 
 export default function ServicesPageContent() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -55,62 +41,70 @@ export default function ServicesPageContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[var(--kg-surface-soft)] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <CornerLeaves className="-left-2 top-0" />
+      <div className="sticky top-[4.35rem] z-40 border-b border-kg-green/10 bg-white/95 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
+          {serviceCategories.map((category) => (
+            <a
+              key={category.id}
+              href={`#${category.id}`}
+              className="shrink-0 rounded-full border border-kg-green/20 px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-kg-green transition hover:border-kg-gold hover:bg-kg-gold/10 hover:text-kg-green-dark sm:text-xs"
+            >
+              {category.eyebrow}
+            </a>
+          ))}
+        </div>
+      </div>
 
-        <div className="relative mx-auto max-w-7xl">
-          <header className="text-center">
-            <h1 className="kg-section-title">{servicesPageHeader.title}</h1>
-            <p className="mt-3 text-sm text-kg-green sm:text-base">{servicesPageHeader.subtitle}</p>
-          </header>
-
-          <div className="mt-14 space-y-16">
-            {serviceCategories.map((category) => (
-              <section
-                key={category.id}
-                id={category.id}
-                className="scroll-mt-28"
-                aria-labelledby={`${category.id}-heading`}
-              >
-                <div className="mx-auto max-w-3xl text-center">
-                  <p className="kg-eyebrow text-kg-gold">{category.eyebrow}</p>
-                  <h2
-                    id={`${category.id}-heading`}
-                    className="kg-display-title mt-3 text-3xl text-kg-green-dark sm:text-4xl"
-                  >
+      <div className="space-y-0">
+        {serviceCategories.map((category, categoryIndex) => (
+          <section
+            key={category.id}
+            id={category.id}
+            className={`scroll-mt-36 px-4 py-12 sm:px-6 sm:py-14 lg:px-8 ${
+              categoryIndex % 2 === 0 ? "bg-kg-surface-soft" : "bg-white"
+            }`}
+            aria-labelledby={`${category.id}-heading`}
+          >
+            <div className="mx-auto max-w-6xl">
+              <Reveal>
+                <div className="flex flex-col gap-4 border-l-4 border-kg-gold pl-5 sm:pl-6">
+                  <p className="kg-eyebrow">{category.eyebrow}</p>
+                  <h2 id={`${category.id}-heading`} className="kg-display-title text-3xl text-kg-green-dark sm:text-4xl">
                     {category.slogan}
                   </h2>
                 </div>
+              </Reveal>
 
-                <div
-                  className={`mt-8 grid gap-4 [perspective:1200px] ${
-                    category.services.length === 1
-                      ? "sm:grid-cols-1 lg:max-w-sm lg:mx-auto"
-                      : category.services.length === 2
-                        ? "sm:grid-cols-2 lg:max-w-3xl lg:mx-auto"
-                        : category.services.length === 3
-                          ? "sm:grid-cols-2 lg:grid-cols-3"
-                          : "sm:grid-cols-2 lg:grid-cols-4"
-                  }`}
-                >
-                  {category.services.map((service) => (
-                    <ServiceCard key={service.id} service={service} onSelect={openDetail} />
-                  ))}
-                </div>
-              </section>
-            ))}
+              <ul className="mt-8 space-y-3 sm:space-y-4">
+                {category.services.map((service, index) => (
+                  <li key={service.id}>
+                    <Reveal delayMs={index * 60}>
+                      <ServiceRowCard service={service} onSelect={openDetail} />
+                    </Reveal>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <section className="bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+        <Reveal>
+          <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-kg-green/12 bg-kg-surface-soft px-7 py-10 text-center sm:px-12 sm:py-12">
+            <p className="kg-serif-heading mx-auto max-w-3xl text-xl leading-relaxed text-kg-green-dark sm:text-2xl">
+              {servicesClosingLine}
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Link href="/contact" className="kg-btn-primary min-w-[min(100%,14rem)] px-10 py-3.5">
+                Plan your visit
+              </Link>
+              <Link href="/moments/" className="kg-btn-secondary min-w-[min(100%,14rem)] px-10 py-3.5">
+                See the gallery
+              </Link>
+            </div>
           </div>
-
-          <p className="kg-serif-heading mx-auto mt-14 max-w-3xl text-center text-base font-medium leading-relaxed text-kg-green sm:text-lg">
-            {servicesClosingLine}
-          </p>
-
-          <div className="mt-10 flex justify-center">
-            <Link href="/contact" className="kg-btn-primary min-w-[min(100%,20rem)] px-10 py-4">
-              Plan Your Visit
-            </Link>
-          </div>
-        </div>
+        </Reveal>
       </section>
 
       {selected && (

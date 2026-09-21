@@ -16,11 +16,23 @@ export const socialLinks = [
 ] as const;
 
 export const contactPageHeader = {
-  title: "Get in Touch",
-  subtitle: "We'd love to hear from you",
+  eyebrow: "Get in touch",
+  title: "Plan your stay, celebration, or visit",
   description:
-    "Whether you're planning a wedding, a corporate retreat, or a peaceful weekend escape — our team is here to help you craft the perfect experience at Kalawati Greens.",
+    "Whether you are booking cottages, hosting a wedding, or scheduling a venue walkthrough — our team will help you shape the experience at Kalawati Greens.",
 } as const;
+
+export const contactHeroImages = {
+  primary: "/images/cottage.png",
+  secondary: "/images/banquet.png",
+  accent: "/images/pool.png",
+} as const;
+
+export const contactIntents = [
+  { id: "stay", label: "Book a stay", href: "/contact/?intent=stay" },
+  { id: "event", label: "Plan an event", href: "/contact/?intent=event" },
+  { id: "visit", label: "Schedule a visit", href: "/contact/?intent=visit" },
+] as const;
 
 export const visitInfo = {
   hours: "Open daily · 9:00 AM – 8:00 PM",
@@ -33,22 +45,27 @@ export const contactHighlights = [
     title: "Luxury Stays",
     description: "Forest cottages surrounded by 2,80,000+ plants",
     image: "/images/cottage.png",
+    href: "/services/#curated-spaces",
   },
   {
     title: "Grand Celebrations",
-    description: "Banquet halls & lawns for weddings & events",
+    description: "Banquet halls and lawns for weddings and events",
     image: "/images/banquet.png",
+    href: "/services/#grand-venues",
   },
   {
     title: "Pool & Dining",
-    description: "Tropical pool, restaurant & premium bar",
+    description: "Tropical pool, restaurant, and premium bar",
     image: "/images/pool.png",
+    href: "/services/#drink-dine",
   },
   {
     title: "Corporate Events",
-    description: "Conference halls for meetings & offsites",
+    description: "Conference halls for meetings and offsites",
     image: "/images/conference.png",
+    href: "/services/#curated-spaces",
   },
 ] as const;
 
+/** @deprecated Use contactHeroImages — kept for admin preview */
 export const contactBannerImage = "/images/gallery/moment-01.png";

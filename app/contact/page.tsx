@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="kg-home-main">
         <ContactPageContent />
       </main>
       <Footer />

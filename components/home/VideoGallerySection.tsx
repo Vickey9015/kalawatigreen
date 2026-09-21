@@ -9,9 +9,9 @@ export default function VideoGallerySection() {
       <div className="mx-auto max-w-7xl text-center">
         <Reveal>
           <p className="kg-eyebrow">Cinematic glimpses</p>
-          <h2 className="kg-serif-heading mt-4 text-4xl text-kg-green-dark sm:text-5xl">Experience Kalawati Greens</h2>
+          <h2 className="kg-serif-heading kg-home-section-title mt-4 text-kg-green-dark">Experience Kalawati Greens</h2>
         </Reveal>
-        <ul className="mt-12 grid gap-6 md:grid-cols-3">
+        <ul className="mt-8 grid gap-5 sm:mt-12 sm:gap-6 md:grid-cols-3">
           {homeVideos.map((video, index) => (
             <li key={video.title}>
               <Reveal delayMs={index * 80}>

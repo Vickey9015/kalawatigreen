@@ -21,7 +21,13 @@ export type GalleryItem = {
 
 export const galleryPageHeader = {
   title: "Kalawati Moments",
-  subtitle: "Explore moments captured at Kalawati Greens:",
+  subtitle: "Weddings, retreats, poolside evenings, and celebrations framed by the forest.",
+} as const;
+
+export const galleryHeroImages = {
+  feature: "/images/gallery/moment-01.png",
+  pool: "/images/gallery/moment-07.png",
+  celebration: "/images/gallery/moment-03.png",
 } as const;
 
 export const galleryFilters: { id: GalleryCategory; label: string }[] = [

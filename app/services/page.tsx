@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ServicesHeroSection from "@/components/services/ServicesHeroSection";
 import ServicesPageContent from "@/components/services/ServicesPageContent";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -18,7 +19,8 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="kg-home-main">
+        <ServicesHeroSection />
         <ServicesPageContent />
       </main>
       <Footer />

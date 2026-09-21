@@ -14,7 +14,7 @@ function SpaceCard({ space }: { space: HomeSpaceItem }) {
   return (
     <article
       data-space-card
-      className="group relative h-[28rem] w-[min(84vw,22rem)] shrink-0 snap-center overflow-hidden rounded-[1.75rem] border border-kg-green/12 bg-white shadow-lg"
+      className="group relative h-[24rem] w-[min(88vw,20rem)] shrink-0 snap-center overflow-hidden rounded-[1.5rem] border border-kg-green/12 bg-white shadow-lg sm:h-[28rem] sm:w-[min(84vw,22rem)] sm:rounded-[1.75rem]"
     >
       {space.image ? (
         <>
@@ -104,7 +104,7 @@ export default function SpacesCarousel() {
         <Reveal>
           <div className="text-center">
             <p className="kg-eyebrow">Natural Elegance</p>
-            <h2 className="kg-display-title mt-4 text-4xl uppercase text-kg-green-dark sm:text-6xl">{spacesSection.title}</h2>
+            <h2 className="kg-display-title kg-home-section-title mt-4 uppercase text-kg-green-dark">{spacesSection.title}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-kg-muted sm:text-base">{spacesSection.subtitle}</p>
           </div>
         </Reveal>
@@ -130,7 +130,7 @@ export default function SpacesCarousel() {
 
       <div
         ref={scrollerRef}
-        className="kg-space-track mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-4 sm:px-8"
+        className="kg-space-track mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[max(1rem,env(safe-area-inset-left))] pb-4 pr-[max(1rem,env(safe-area-inset-right))] scroll-pl-4 sm:mt-10 sm:gap-6 sm:px-8"
       >
         {homeSpaces.map((space) => (
           <SpaceCard key={space.id} space={space} />

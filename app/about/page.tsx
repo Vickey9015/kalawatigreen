@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AboutClosingBanner from "@/components/about/AboutClosingBanner";
+import AboutFactsSection from "@/components/about/AboutFactsSection";
 import AboutIntroSection from "@/components/about/AboutIntroSection";
 import AboutValuesSection from "@/components/about/AboutValuesSection";
 import StoryMissionVisionSection from "@/components/about/StoryMissionVisionSection";
@@ -22,8 +23,9 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="kg-home-main">
         <AboutIntroSection />
+        <AboutFactsSection />
         <StoryMissionVisionSection />
         <AboutValuesSection />
         <AboutClosingBanner />

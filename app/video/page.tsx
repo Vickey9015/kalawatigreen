@@ -7,9 +7,9 @@ import { seoForRoute } from "@/lib/seo";
 export function generateMetadata(): Metadata {
   return seoForRoute({
     pathname: "/video",
-    title: "Video Section | Kalawati Greens",
+    title: "Films & Video | Kalawati Greens",
     description:
-      "Watch and experience Kalawati Greens — a forest-inspired retreat in Ambedkar Nagar.",
+      "Watch and experience Kalawati Greens in motion — forest retreats, celebrations, and poolside moments in Ambedkar Nagar.",
     imageUrl: "/images/top_bg_image.png",
   });
 }
@@ -18,7 +18,7 @@ export default function VideoPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="kg-home-main">
         <VideoPageContent />
       </main>
       <Footer />

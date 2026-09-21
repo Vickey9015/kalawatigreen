@@ -10,15 +10,15 @@ export default function MomentsPreviewSection() {
         <Reveal>
           <div className="text-center">
             <p className="kg-eyebrow">The gallery</p>
-            <h2 className="kg-display-title mt-4 text-4xl uppercase text-kg-green-dark sm:text-5xl">Moments to Treasure</h2>
+            <h2 className="kg-display-title kg-home-section-title mt-4 uppercase text-kg-green-dark">Moments to Treasure</h2>
           </div>
         </Reveal>
-        <ul className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+        <ul className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-12 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5 lg:gap-4">
           {homeMoments.map((moment, index) => (
-            <li key={moment.label} className={index === 0 ? "sm:col-span-2 sm:row-span-2" : ""}>
+            <li key={moment.label} className={index === 0 ? "col-span-2 row-span-1 sm:col-span-2 sm:row-span-2" : ""}>
               <Reveal delayMs={index * 40}>
-                <Link href="/moments" className="group relative block overflow-hidden rounded-2xl">
-                  <div className={`relative ${index === 0 ? "aspect-[4/3] sm:aspect-square" : "aspect-[4/3]"}`}>
+                <Link href="/moments/" className="group relative block overflow-hidden rounded-xl sm:rounded-2xl">
+                  <div className={`relative ${index === 0 ? "aspect-[16/10] sm:aspect-square" : "aspect-[4/3]"}`}>
                     <Image
                       src={moment.image}
                       alt={moment.label}
@@ -27,7 +27,7 @@ export default function MomentsPreviewSection() {
                       sizes="(max-width: 1024px) 50vw, 20vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-kg-green-dark/80 via-transparent to-transparent" />
-                    <p className="absolute inset-x-0 bottom-0 px-4 py-4 text-sm text-white">{moment.label}</p>
+                    <p className="absolute inset-x-0 bottom-0 px-3 py-2.5 text-xs text-white sm:px-4 sm:py-4 sm:text-sm">{moment.label}</p>
                   </div>
                 </Link>
               </Reveal>

@@ -63,6 +63,7 @@ export default function WelcomeSection() {
   useEffect(() => {
     const media = mediaRef.current;
     if (!media) return;
+    if (window.matchMedia("(pointer: coarse)").matches) return;
 
     function onMove(event: PointerEvent) {
       const node = mediaRef.current;
@@ -100,7 +101,7 @@ export default function WelcomeSection() {
       <div className="kg-welcome-grid" aria-hidden />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
+        <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">
             <p className="kg-welcome-eyebrow kg-eyebrow">{welcomeContent.eyebrow}</p>
 
@@ -108,7 +109,7 @@ export default function WelcomeSection() {
               {titleLines.map((line, index) => (
                 <span
                   key={line.text}
-                  className={`kg-welcome-title-line block text-4xl sm:text-5xl lg:text-[3.35rem] ${
+                  className={`kg-welcome-title-line block text-[1.85rem] sm:text-5xl lg:text-[3.35rem] ${
                     line.accent ? "kg-welcome-title-line--accent" : "text-kg-green-dark"
                   }`}
                   style={{ transitionDelay: `${120 + index * 110}ms` }}
@@ -177,12 +178,12 @@ export default function WelcomeSection() {
               </div>
 
               <div className="kg-welcome-media-card kg-welcome-media-card--main overflow-hidden">
-                <WelcomeVideo className="h-full min-h-[26rem] rounded-[1.75rem]" />
+                <WelcomeVideo className="h-full min-h-[17rem] rounded-[1.35rem] sm:min-h-[22rem] sm:rounded-[1.75rem] lg:min-h-[26rem]" />
               </div>
 
               <div className="kg-welcome-stat-chip">
-                <p className="text-2xl font-semibold text-kg-green-dark">2,80,000+</p>
-                <p className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.16em] text-kg-muted">
+                <p className="text-xl font-semibold text-kg-green-dark sm:text-2xl">2,80,000+</p>
+                <p className="mt-0.5 text-[0.6rem] font-bold uppercase tracking-[0.14em] text-kg-muted sm:mt-1 sm:text-[0.65rem] sm:tracking-[0.16em]">
                   Plants & trees
                 </p>
               </div>

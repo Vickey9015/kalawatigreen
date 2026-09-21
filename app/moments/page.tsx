@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import GalleryPageContent from "@/components/gallery/GalleryPageContent";
+import MomentsHeroSection from "@/components/gallery/MomentsHeroSection";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { seoForRoute } from "@/lib/seo";
@@ -18,7 +19,8 @@ export default function MomentsPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="kg-home-main">
+        <MomentsHeroSection />
         <GalleryPageContent />
       </main>
       <Footer />

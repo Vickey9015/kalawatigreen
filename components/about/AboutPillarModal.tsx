@@ -42,7 +42,7 @@ export default function AboutPillarModal({ detail, onClose }: AboutPillarModalPr
         onClick={onClose}
       />
 
-      <div className="relative z-10 max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-t-2xl bg-kg-cream shadow-2xl sm:rounded-2xl">
+      <div className="relative z-10 max-h-[92dvh] w-full max-w-2xl overflow-hidden rounded-t-2xl bg-white pb-[env(safe-area-inset-bottom)] shadow-2xl sm:rounded-2xl sm:pb-0">
         <div className="relative aspect-[16/9] w-full shrink-0">
           <Image
             src={detail.image}
@@ -64,8 +64,8 @@ export default function AboutPillarModal({ detail, onClose }: AboutPillarModalPr
           </button>
         </div>
 
-        <div className="max-h-[50vh] overflow-y-auto px-6 py-6 sm:px-8 sm:py-8">
-          <h2 id="about-pillar-title" className="text-xl font-bold text-kg-green sm:text-2xl">
+        <div className="max-h-[min(50vh,28rem)] overflow-y-auto overscroll-contain px-5 py-5 sm:max-h-[50vh] sm:px-8 sm:py-8">
+          <h2 id="about-pillar-title" className="text-lg font-bold text-kg-green sm:text-2xl">
             {detail.title}
           </h2>
 

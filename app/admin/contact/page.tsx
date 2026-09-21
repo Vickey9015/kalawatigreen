@@ -35,11 +35,11 @@ export default function AdminContactPage() {
       <AdminPanel title="Page header">
         <div className="grid gap-4">
           <div className="grid gap-4 md:grid-cols-2">
+            <Field label="Eyebrow">
+              <TextInput defaultValue={contactPageHeader.eyebrow} />
+            </Field>
             <Field label="Title">
               <TextInput defaultValue={contactPageHeader.title} />
-            </Field>
-            <Field label="Subtitle">
-              <TextInput defaultValue={contactPageHeader.subtitle} />
             </Field>
           </div>
           <Field label="Description">

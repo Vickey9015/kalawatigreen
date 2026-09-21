@@ -219,6 +219,18 @@ input:disabled {
   line-height: 1.08;
 }
 
+/* Homepage section headings — scale down on narrow viewports */
+.kg-home-section-title {
+  font-size: clamp(1.65rem, 5.2vw, 2.75rem);
+  line-height: 1.1;
+}
+
+@media (min-width: 640px) {
+  .kg-home-section-title {
+    font-size: clamp(2rem, 4vw, 3.75rem);
+  }
+}
+
 .kg-on-image {
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
 }
@@ -357,6 +369,8 @@ input:disabled {
 
 .kg-space-track {
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .kg-welcome {
@@ -531,16 +545,40 @@ input:disabled {
 
 .kg-welcome-stat-chip {
   position: absolute;
-  right: -0.5rem;
-  bottom: 1.5rem;
+  right: 0.5rem;
+  bottom: 1rem;
   z-index: 2;
+  max-width: min(11rem, calc(100% - 1rem));
   border-radius: 1.25rem;
   border: 1px solid rgba(var(--kg-green-rgb), 0.16);
   background: rgba(255, 255, 255, 0.94);
-  padding: 1rem 1.15rem;
+  padding: 0.75rem 0.9rem;
   box-shadow: 0 16px 40px -24px rgba(var(--kg-green-rgb), 0.55);
   animation: kg-welcome-float 7s ease-in-out infinite;
   animation-delay: -2s;
+}
+
+@media (min-width: 640px) {
+  .kg-welcome-stat-chip {
+    right: -0.5rem;
+    bottom: 1.5rem;
+    max-width: none;
+    padding: 1rem 1.15rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .kg-welcome-media {
+    min-height: 20rem;
+  }
+
+  .kg-welcome-media-card--main {
+    min-height: 18rem;
+  }
+
+  .kg-welcome-media-card--back {
+    inset: 14% 10% 0 14%;
+  }
 }
 
 @keyframes kg-welcome-float {
