@@ -11,7 +11,7 @@ export const heroSlides = [
     panels: [
       { image: "/images/cottage.png", alt: "Luxury cottage at dusk" },
       { image: "/images/pool.png", alt: "Aerial view of the tropical swimming pool" },
-      { image: "/images/banquet.png", alt: "Glass banquet hall among the trees" },
+      { image: "/images/lawn-upawan.png", alt: "Celebration lawn surrounded by greenery" },
     ],
   },
   {
@@ -35,7 +35,7 @@ export const heroSlides = [
 export const heroCinematic = [
   { image: "/images/cottage.png", alt: "Luxury cottage at dusk" },
   { image: "/images/pool.png", alt: "Aerial view of the tropical swimming pool" },
-  { image: "/images/banquet.png", alt: "Glass banquet hall among the trees" },
+  { image: "/images/lawn-upawan.png", alt: "Open lawn for celebrations" },
   { image: "/images/hero.jpg", alt: "Forest resort aerial view" },
   { image: "/images/restaurant.png", alt: "Restaurant dining at Kalawati Greens" },
   { image: "/images/gallery/moment-06.png", alt: "Night ambience at the resort" },
